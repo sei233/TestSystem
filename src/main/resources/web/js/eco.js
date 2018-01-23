@@ -9,7 +9,7 @@ $(function () {
         };
 
         $.post({
-            url: 'http://127.0.0.1:8080/user/regist',
+            url: 'http://localhost:8080/user/regist',
             data: paramData,
             dataType: "json",
             success: function(data) {
