@@ -28,4 +28,5 @@ public class User {
     private String userPassword;
     @Column(name = "user_phone")
     private String userPhone;
+    //test
 }
