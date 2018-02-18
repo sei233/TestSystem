@@ -37,7 +37,7 @@ $(function () {
             dataType: "json",
             success: function(data) {
                 alert(data.errorCode + "   " + data.errorMessage);
-                window.location.assign("main.html")
+                if(data.role==1) window.location.assign("student_main.html")
             },
             error:function (data) {
                 alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);

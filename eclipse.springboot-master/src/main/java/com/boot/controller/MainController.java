@@ -37,6 +37,7 @@ public class MainController {
         HttpResult httpResult=new HttpResult();
         httpResult.setErrorCode(ResultCode.LOGIN_SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.LOGIN_SUCCESS.getMessage());
+        httpResult.setRole(userVo.getUserRole());
         return httpResult;
     }
 }

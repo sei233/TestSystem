@@ -12,4 +12,5 @@ import lombok.Data;
 public class HttpResult{
     private Integer errorCode;
     private String errorMessage;
+    private int role;
 }

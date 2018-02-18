@@ -29,5 +29,5 @@ public class User {
     @Column(name = "user_phone")
     private String userPhone;
     @Column(name = "user_role")
-    private String userRole;
+    private int userRole;
 }
