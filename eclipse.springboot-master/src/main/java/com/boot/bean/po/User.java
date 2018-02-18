@@ -30,4 +30,5 @@ public class User {
     private String userPhone;
     @Column(name = "user_role")
     private int userRole;
+    //增加一个状态
 }
