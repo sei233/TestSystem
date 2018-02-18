@@ -28,6 +28,9 @@ public class UserServiceImp implements UserService {
         {
             throw new BusiException(ResultCode.USER_EXIST);
         }
+        if(userVo.getUserRole()>5){                                                //用的是userVo而不是user
+            throw new BusiException(ResultCode.USER_ROLE_UNEXIST);
+        }
         user=new User();
         user.setUserId(Random());
         user.setUserName(userVo.getUserName());
@@ -45,6 +48,9 @@ public class UserServiceImp implements UserService {
         }
         if(!user.getUserPassword().equals(userVo.getUserPassword())){
             throw new BusiException(ResultCode.PASSWORD_ERROR);
+        }
+        if(user.getUserRole()!=userVo.getUserRole()||userVo.getUserRole()>6){                      //用的是userVo而不是user
+            throw new BusiException(ResultCode.USER_ROLE_ERROR);
         }
     }
 

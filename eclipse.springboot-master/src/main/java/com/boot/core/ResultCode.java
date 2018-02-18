@@ -7,7 +7,9 @@ public enum ResultCode {
     USER_EXIST(1001, "用户已存在！"),
     USER_UNEXIST(1002, "用户不存在！"),
     LOGIN_SUCCESS(1003,"登陆成功"),
-    PASSWORD_ERROR(1004,"密码错误")
+    PASSWORD_ERROR(1004,"密码错误"),
+    USER_ROLE_UNEXIST(1005,"用户角色不存在"),
+    USER_ROLE_ERROR(1006,"用户角色错误")
     ;
 
 
