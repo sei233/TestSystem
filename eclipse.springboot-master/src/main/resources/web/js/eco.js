@@ -6,7 +6,8 @@ $(function () {
         var paramData = {
             userName:$("#re_userName").val(),
             userPassword:$("#re_userPassword").val(),
-            userPhone:$("#re_userPhone").val()
+            userPhone:$("#re_userPhone").val(),
+            userRole:$("#re_userRole").val()
         };
         //js控制id
         $.post({
@@ -27,7 +28,7 @@ $(function () {
         var paramData = {
             userName:$("#lo_userName").val(),
             userPassword:$("#lo_userPassword").val(),
-            userPhone:$("#lo_userPhone").val()
+            userRole:$("#lo_userRole").val()
         };
         //js控制id,通过submit来进行区分
         $.post({

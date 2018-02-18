@@ -33,6 +33,7 @@ public class UserServiceImp implements UserService {
         user.setUserName(userVo.getUserName());
         user.setUserPassword(userVo.getUserPassword());
         user.setUserPhone(userVo.getUserPhone());
+        user.setUserRole(userVo.getUserRole());
         userRepository.save(user);
     }
 
