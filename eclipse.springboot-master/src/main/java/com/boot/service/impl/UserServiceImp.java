@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -23,6 +24,7 @@ public class UserServiceImp implements UserService {
     @Override
     @Transactional
     public void registeUser(UserVo userVo) throws BusiException {
+        List<User> users=userRepository.findAll();
         User user=userRepository.findByUserName(userVo.getUserName());
         if(user!=null)
         {
@@ -57,8 +59,11 @@ public class UserServiceImp implements UserService {
     //生成id
     public long Random(){
             long t = System.currentTimeMillis();//获得当前时间的毫秒数
-            Random rd = new Random(t);//作为种子数传入到Random的构造器中
-            int id=rd.nextInt();//生成随即整数
-            return id;
+            return t;
+    }
+
+    @Override
+    public List<User> findAllUser() throws BusiException {
+        return userRepository.findAll();
     }
 }

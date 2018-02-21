@@ -8,6 +8,8 @@
 package com.boot.controller;
 
 import com.boot.bean.base.HttpResult;
+import com.boot.bean.po.User;
+import com.boot.bean.vo.UserListVo;
 import com.boot.bean.vo.UserVo;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
@@ -16,6 +18,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
 //配置RestController注解，表示这个是Rest风格的controller，用来处理json的数据
 @RestController
 @RequestMapping(value = "/user")
@@ -38,6 +43,16 @@ public class MainController {
         httpResult.setErrorCode(ResultCode.LOGIN_SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.LOGIN_SUCCESS.getMessage());
         httpResult.setRole(userVo.getUserRole());
+        return httpResult;
+    }
+
+    @RequestMapping(value = "/database",method = RequestMethod.POST)
+    public HttpResult queryUsers() throws BusiException {
+        List<User> usersList=userService.findAllUser();
+        UserListVo httpResult=new UserListVo();
+        httpResult.setErrorCode(ResultCode.LOGIN_SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.LOGIN_SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
         return httpResult;
     }
 }

@@ -38,6 +38,7 @@ $(function () {
             success: function(data) {
                 alert(data.errorCode + "   " + data.errorMessage);
                 if(data.role==1) window.location.assign("student_main.html")
+                if(data.role==6) window.location.assign("../html/root/root_main.html")
             },
             error:function (data) {
                 alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
