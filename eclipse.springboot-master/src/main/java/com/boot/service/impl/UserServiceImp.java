@@ -24,7 +24,6 @@ public class UserServiceImp implements UserService {
     @Override
     @Transactional
     public void registeUser(UserVo userVo) throws BusiException {
-        List<User> users=userRepository.findAll();
         User user=userRepository.findByUserName(userVo.getUserName());
         if(user!=null)
         {

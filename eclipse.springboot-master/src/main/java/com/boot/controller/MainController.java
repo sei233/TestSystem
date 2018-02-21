@@ -10,6 +10,7 @@ package com.boot.controller;
 import com.boot.bean.base.HttpResult;
 import com.boot.bean.po.User;
 import com.boot.bean.vo.UserListVo;
+import com.boot.bean.vo.UserRole;
 import com.boot.bean.vo.UserVo;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
@@ -31,17 +32,17 @@ public class MainController {
     public HttpResult registUser(UserVo userVo) throws BusiException {
         userService.registeUser(userVo);
         HttpResult httpResult=new HttpResult();
-        httpResult.setErrorCode(ResultCode.REGISTER_SUCCESS.getCode());
-        httpResult.setErrorMessage(ResultCode.REGISTER_SUCCESS.getMessage());
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         return httpResult;
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public HttpResult loginUser(UserVo userVo) throws BusiException {
         userService.loginUser(userVo);
-        HttpResult httpResult=new HttpResult();
-        httpResult.setErrorCode(ResultCode.LOGIN_SUCCESS.getCode());
-        httpResult.setErrorMessage(ResultCode.LOGIN_SUCCESS.getMessage());
+        UserRole httpResult=new UserRole();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setRole(userVo.getUserRole());
         return httpResult;
     }
@@ -50,8 +51,8 @@ public class MainController {
     public HttpResult queryUsers() throws BusiException {
         List<User> usersList=userService.findAllUser();
         UserListVo httpResult=new UserListVo();
-        httpResult.setErrorCode(ResultCode.LOGIN_SUCCESS.getCode());
-        httpResult.setErrorMessage(ResultCode.LOGIN_SUCCESS.getMessage());
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
         return httpResult;
     }
