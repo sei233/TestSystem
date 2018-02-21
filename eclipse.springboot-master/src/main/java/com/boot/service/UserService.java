@@ -13,5 +13,7 @@ public interface UserService {
     void registeUser(UserVo user) throws BusiException;
     void loginUser(UserVo user) throws BusiException;
     List<User> findAllUser() throws BusiException;
+    List<User> findUserByPage(int index,int size) throws BusiException;
+    int getCount()throws BusiException;
 }
 

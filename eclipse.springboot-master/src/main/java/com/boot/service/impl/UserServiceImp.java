@@ -65,4 +65,16 @@ public class UserServiceImp implements UserService {
     public List<User> findAllUser() throws BusiException {
         return userRepository.findAll();
     }
+
+    @Override
+    public List<User> findUserByPage(int index, int size) throws BusiException {
+        return userRepository.selectUser(index,size);
+    }
+
+
+
+    //获取总记录数
+    public int getCount() {
+        return userRepository.getCount();
+    }
 }

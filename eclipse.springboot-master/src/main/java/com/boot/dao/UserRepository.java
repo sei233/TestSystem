@@ -1,9 +1,12 @@
 package com.boot.dao;
 
 import com.boot.bean.po.User;
+import com.boot.bean.vo.UserListVo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
 
 /**
  * Created by Chenxiang on 2018/1/5.
@@ -19,5 +22,9 @@ public interface UserRepository extends JpaRepository<User,Long>,JpaSpecificatio
     @Query(value = "SELECT * FROM USER WHERE user_name=?1 AND user_id=?2",nativeQuery = true)
     public User findUserByUserNameAndUserId(String userName,Long userId);
 
+    @Query(value = "SELECT * FROM user limit ?1,?2",nativeQuery = true)
+    List<User> selectUser(int index, int size);
 
+    @Query(value = "SELECT COUNT(user_name) from user",nativeQuery = true)
+    int getCount();
 }

@@ -10,6 +10,7 @@ package com.boot.controller;
 import com.boot.bean.base.HttpResult;
 import com.boot.bean.po.User;
 import com.boot.bean.vo.UserListVo;
+import com.boot.bean.vo.UserQueryVo;
 import com.boot.bean.vo.UserRole;
 import com.boot.bean.vo.UserVo;
 import com.boot.core.BusiException;
@@ -48,12 +49,16 @@ public class MainController {
     }
 
     @RequestMapping(value = "/database",method = RequestMethod.POST)
-    public HttpResult queryUsers() throws BusiException {
-        List<User> usersList=userService.findAllUser();
+    public HttpResult queryUsers(UserQueryVo userQueryVo) throws BusiException {
+        int size=userQueryVo.getSize();
+        int count=userService.getCount();
+        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
         UserListVo httpResult=new UserListVo();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
+        httpResult.setPage(1);
+        httpResult.setTotalPage(count/size);  //整除
         return httpResult;
     }
 }
