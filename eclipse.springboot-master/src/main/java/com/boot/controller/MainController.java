@@ -29,6 +29,7 @@ import java.util.List;
 public class MainController {
     @Autowired
     UserService userService;
+    UserListVo httpResult=new UserListVo();
     @RequestMapping(value = "/regist",method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
         userService.registeUser(userVo);
@@ -53,12 +54,32 @@ public class MainController {
         int size=userQueryVo.getSize();
         int count=userService.getCount();
         List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
-        UserListVo httpResult=new UserListVo();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
         httpResult.setPage(1);
         httpResult.setTotalPage(count/size);  //整除
+        return httpResult;
+    }
+
+    @RequestMapping(value = "/pageUp",method = RequestMethod.POST)
+    public HttpResult queryLastPage(UserQueryVo userQueryVo) throws BusiException {
+
+        UserListVo httpResult=new UserListVo();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        return httpResult;
+    }
+
+    @RequestMapping(value = "/pageDown",method = RequestMethod.POST)
+    public HttpResult queryNextPage(UserQueryVo userQueryVo) throws BusiException {
+        userQueryVo.setIndex(httpResult.getPage()*userQueryVo.getSize());
+        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        httpResult.setPage(httpResult.getPage()+1);
+        httpResult.setTotalPage(httpResult.getTotalPage());
         return httpResult;
     }
 }

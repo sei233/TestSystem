@@ -8,6 +8,6 @@ import java.util.List;
 @Data
 public class UserListVo extends HttpResult {
     List<User> usersList;
-    private long page;
-    private long totalPage;
+    private int page;
+    private int totalPage;
 }
