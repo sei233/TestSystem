@@ -79,7 +79,6 @@ public class MainController {
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
         httpResult.setPage(httpResult.getPage()+1);
-        httpResult.setTotalPage(httpResult.getTotalPage());
         return httpResult;
     }
 }
