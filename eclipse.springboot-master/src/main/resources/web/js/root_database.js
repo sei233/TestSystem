@@ -8,18 +8,20 @@ $(function () {
             var usersList=data.usersList;
             $.each(usersList,function (index,obj) {
                 var string= "<tr>/n"
-                    +"<td width=\"20%\">"+obj.userId+"</td>/n"
-                    +"<td width=\"20%\">"+obj.userName+"</td>/n"
-                    +"<td width=\"20%\">"+obj.userPassword+"</td>/n"
-                    +"<td width=\"20%\">"+obj.userPhone+"</td>/n"
-                    +"<td width=\"20%\">"+obj.userRole+"</td>/n"
+                    +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test'>"+"</td>/n"
+                    +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>/n"
+                    +"<td width=\"20%\" align=\"center\">"+obj.userName+"</td>/n"
+                    +"<td width=\"20%\" align=\"center\">"+obj.userPassword+"</td>/n"
+                    +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>/n"
+                    +"<td width=\"20%\" align=\"center\">"+obj.userRole+"</td>/n"
                 +"</tr>/n"
                 $("#table_id_example").append(string);
             });
             }
             function table() {
                 $("#table_id_example").html("<tr>\n" +
-                    "        <th width=\"20%\">用户ID</th>\n" +
+                    "        <th width=\"10%\"></th>\n" +
+                    "        <th width=\"10%\">用户ID</th>\n" +
                     "        <th width=\"20%\">用户名</th>\n" +
                     "        <th width=\"20%\">密码</th>\n" +
                     "        <th width=\"20%\">用户手机号</th>\n" +
@@ -81,6 +83,22 @@ $(function () {
                 });      //pageDown里再写个pageDown？那10页怎么办？
             // })(i);
             // }
+
+            $('#delete').click(function () {
+                table();
+                $.post({
+                    url: 'http://localhost:8080/user/delete',
+                    data: "",
+                    dataType: "json",
+                    success: function (data) {
+
+                        alert(data.errorCode + "   " + data.errorMessage);
+                    },
+                    error: function (data) {
+                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
+                    }
+                })
+            });
             alert(data.errorCode + "   " + data.errorMessage);
         },
         error:function (data) {

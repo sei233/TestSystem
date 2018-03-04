@@ -83,4 +83,16 @@ public class MainController {
         httpResult.setUsersList(usersList);
         return httpResult;
     }
+
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    public HttpResult deleteUsers(UserVo userVo) throws BusiException {
+        UserQueryVo userQueryVo=new UserQueryVo();
+        //userService.deleteUsers(userVo);
+        userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
+        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        return httpResult;
+    }
 }

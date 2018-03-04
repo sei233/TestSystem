@@ -10,5 +10,5 @@ import lombok.Data;
 @Data
 public class UserQueryVo {
     private int index=0;
-    private int size=1;
+    private int size=2;
 }
