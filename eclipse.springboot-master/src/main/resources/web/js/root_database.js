@@ -36,6 +36,20 @@ $(function () {
                     data: "",
                     dataType: "json",
                     success: function(data) {
+                        var usersList = data.usersList;
+                        $.each(usersList, function (index, obj) {
+                            var string = "<tr>/n"
+                                + "<td width=\"20%\">" + obj.userId + "</td>/n"
+                                + "<td width=\"20%\">" + obj.userName + "</td>/n"
+                                + "<td width=\"20%\">" + obj.userPassword + "</td>/n"
+                                + "<td width=\"20%\">" + obj.userPhone + "</td>/n"
+                                + "<td width=\"20%\">" + obj.userRole + "</td>/n"
+                                + "</tr>/n"
+                            $("#table_id_example").append(string);                                //一条输出一次
+                        });
+
+                        $("#pageNum").html("<label>"+"当前页面:"+"</label>");
+                        $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
                     error:function (data) {

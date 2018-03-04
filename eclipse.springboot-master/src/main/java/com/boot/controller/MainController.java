@@ -64,21 +64,23 @@ public class MainController {
 
     @RequestMapping(value = "/pageUp",method = RequestMethod.POST)
     public HttpResult queryLastPage(UserQueryVo userQueryVo) throws BusiException {
-
-        UserListVo httpResult=new UserListVo();
+        httpResult.setPage(httpResult.getPage()-1);
+        userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
+        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
         return httpResult;
     }
 
     @RequestMapping(value = "/pageDown",method = RequestMethod.POST)
     public HttpResult queryNextPage(UserQueryVo userQueryVo) throws BusiException {
-        userQueryVo.setIndex(httpResult.getPage()*userQueryVo.getSize());
+        httpResult.setPage(httpResult.getPage()+1);
+        userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
         List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
-        httpResult.setPage(httpResult.getPage()+1);
         return httpResult;
     }
 }
