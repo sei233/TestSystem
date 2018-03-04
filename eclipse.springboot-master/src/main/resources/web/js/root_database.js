@@ -27,6 +27,10 @@ $(function () {
                     "    </tr>");
 
             }
+            function pageNum(data){
+                $("#pageNum").html("<label>"+"当前页面:"+"</label>");
+                $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
+            }
 
             usersList(data);
 
@@ -44,9 +48,7 @@ $(function () {
                     dataType: "json",
                     success: function(data) {
                         usersList(data);
-
-                        $("#pageNum").html("<label>"+"当前页面:"+"</label>");
-                        $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
+                        pageNum(data);
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
                     error:function (data) {
@@ -65,9 +67,7 @@ $(function () {
                         success: function (data) {
                             // data.page += 1;
                             usersList(data);
-
-                            $("#pageNum").html("<label>"+"当前页面:"+"</label>");
-                            $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
+                            pageNum(data);
                             // var nextpage = "当前页面:" + "[" + data.page + "/" + data.totalPage + "]" //两个page的data不一样
                             //     + "<a id='pageUp'>" + "上一页" + "</a>"
                             //     + "<a id='pageDown'>" + "下一页" + "</a>"
