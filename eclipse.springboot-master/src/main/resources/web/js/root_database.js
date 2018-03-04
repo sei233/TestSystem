@@ -4,6 +4,7 @@ $(function () {
         data: "",
         dataType: "json",
         success: function(data) {
+            function usersList(data){
             var usersList=data.usersList;
             $.each(usersList,function (index,obj) {
                 var string= "<tr>/n"
@@ -15,7 +16,19 @@ $(function () {
                 +"</tr>/n"
                 $("#table_id_example").append(string);
             });
+            }
+            function table() {
+                $("#table_id_example").html("<tr>\n" +
+                    "        <th width=\"20%\">用户ID</th>\n" +
+                    "        <th width=\"20%\">用户名</th>\n" +
+                    "        <th width=\"20%\">密码</th>\n" +
+                    "        <th width=\"20%\">用户手机号</th>\n" +
+                    "        <th width=\"20%\">权限</th>\n" +
+                    "    </tr>");
 
+            }
+
+            usersList(data);
 
             // var page="当前页面:"+"["+data.page+"/"+data.totalPage+"]"
             //         +"<a id='pageUp'>"+"上一页"+"</a>"
@@ -24,29 +37,13 @@ $(function () {
             $("#pageNum").append("<label>"+"["+data.page+"/"+data.totalPage+"]"+"</label>");
 
             $('#pageUp').click(function(){
-                $("#table_id_example").html("<tr>\n" +
-                    "        <th width=\"20%\">用户ID</th>\n" +
-                    "        <th width=\"20%\">用户名</th>\n" +
-                    "        <th width=\"20%\">密码</th>\n" +
-                    "        <th width=\"20%\">用户手机号</th>\n" +
-                    "        <th width=\"20%\">权限</th>\n" +
-                    "    </tr>");
+                table();
                 $.post({
                     url: 'http://localhost:8080/user/pageUp',
                     data: "",
                     dataType: "json",
                     success: function(data) {
-                        var usersList = data.usersList;
-                        $.each(usersList, function (index, obj) {
-                            var string = "<tr>/n"
-                                + "<td width=\"20%\">" + obj.userId + "</td>/n"
-                                + "<td width=\"20%\">" + obj.userName + "</td>/n"
-                                + "<td width=\"20%\">" + obj.userPassword + "</td>/n"
-                                + "<td width=\"20%\">" + obj.userPhone + "</td>/n"
-                                + "<td width=\"20%\">" + obj.userRole + "</td>/n"
-                                + "</tr>/n"
-                            $("#table_id_example").append(string);                                //一条输出一次
-                        });
+                        usersList(data);
 
                         $("#pageNum").html("<label>"+"当前页面:"+"</label>");
                         $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
@@ -60,30 +57,14 @@ $(function () {
 
             // for(var i =1;i<data.totalPage;i++) {(function () {
             $('#pageDown').click(function () {
-                    $("#table_id_example").html("<tr>\n" +
-                        "        <th width=\"20%\">用户ID</th>\n" +
-                        "        <th width=\"20%\">用户名</th>\n" +
-                        "        <th width=\"20%\">密码</th>\n" +
-                        "        <th width=\"20%\">用户手机号</th>\n" +
-                        "        <th width=\"20%\">权限</th>\n" +
-                        "    </tr>");
+                    table();
                     $.post({
                         url: 'http://localhost:8080/user/pageDown',
                         data: "",
                         dataType: "json",
                         success: function (data) {
                             // data.page += 1;
-                            var usersList = data.usersList;
-                            $.each(usersList, function (index, obj) {
-                                var string = "<tr>/n"
-                                    + "<td width=\"20%\">" + obj.userId + "</td>/n"
-                                    + "<td width=\"20%\">" + obj.userName + "</td>/n"
-                                    + "<td width=\"20%\">" + obj.userPassword + "</td>/n"
-                                    + "<td width=\"20%\">" + obj.userPhone + "</td>/n"
-                                    + "<td width=\"20%\">" + obj.userRole + "</td>/n"
-                                    + "</tr>/n"
-                                $("#table_id_example").append(string);                                //一条输出一次
-                            });
+                            usersList(data);
 
                             $("#pageNum").html("<label>"+"当前页面:"+"</label>");
                             $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
