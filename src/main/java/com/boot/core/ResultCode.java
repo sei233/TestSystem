@@ -2,9 +2,15 @@ package com.boot.core;
 
 public enum ResultCode {
     //平台抛出异常
-    SYSTEM_SUCCESS(999, "交易成功"),
+    SUCCESS(999, "成功"),
     SYSTEM_ERROR(1000, "系统错误，请稍后重试"),
-    USER_EXIST(1001, "用户已存在！");
+    USER_EXIST(1001, "用户已存在！"),
+    USER_UNEXIST(1002, "用户不存在！"),
+    PASSWORD_ERROR(1004,"密码错误"),
+    USER_ROLE_UNEXIST(1005,"用户角色不存在"),
+    USER_ROLE_ERROR(1006,"用户角色错误")
+    ;
+
 
 
     private int code;

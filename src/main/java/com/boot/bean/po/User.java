@@ -22,8 +22,13 @@ public class User {
     @Id
     @Column(name = "user_id")
     private Long userId;
-    @Column(name = "userName")
+    @Column(name = "user_name")
     private String userName;
-    @Column(name = "user_Phone")
+    @Column(name = "user_password")
+    private String userPassword;
+    @Column(name = "user_phone")
     private String userPhone;
+    @Column(name = "user_role")
+    private int userRole;
+    //增加一个状态
 }
