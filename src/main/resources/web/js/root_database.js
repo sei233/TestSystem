@@ -8,9 +8,9 @@ $(function () {
             var usersList=data.usersList;
             $.each(usersList,function (index,obj) {
                 var string= "<tr>/n"
-                    +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test'>"+"</td>/n"
+                    +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test1'>"+"</td>/n"
                     +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>/n"
-                    +"<td width=\"20%\" align=\"center\" class='userName'>"+obj.userName+"</td>/n"
+                    +"<td width=\"20%\" align=\"center\" class='userName1'>"+obj.userName+"</td>/n"
                     +"<td width=\"20%\" align=\"center\">"+obj.userPassword+"</td>/n"
                     +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>/n"
                     +"<td width=\"20%\" align=\"center\">"+obj.userRole+"</td>/n"
@@ -84,15 +84,17 @@ $(function () {
             // })(i);
             // }
 
-            var names;
+            var list_map = new Array();
             $('#delete').click(function () {
-                table();
-                $("input[name='test']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
-                    names=$(this).parent("td").parent("tr").children("td.userName").html();
+                //table();
+                $("input[name='test1']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
+                    var names=$(this).parent("td").parent("tr").children("td.userName1").html();
+                    list_map.push({name:names});
+                    console.log(list_map);
                 });
                 $.post({
                     url: 'http://localhost:8080/user/delete',
-                    data: names,
+                    data: list_map,
                     dataType: "json",
                     success: function (data) {
                         usersList(data);
