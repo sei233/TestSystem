@@ -1,6 +1,7 @@
 package com.boot.service.impl;
 
 import com.boot.bean.po.User;
+import com.boot.bean.vo.UserNamesVo;
 import com.boot.bean.vo.UserVo;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -59,6 +61,15 @@ public class UserServiceImp implements UserService {
     public long Random(){
             long t = System.currentTimeMillis();//获得当前时间的毫秒数
             return t;
+    }
+
+    @Override
+    public void deleteUsers(UserNamesVo userNames) {
+        Iterator it = userNames.getUserNames().iterator();      //遍历userNames，然后一个一个删除
+        while(it.hasNext()){
+            String s = (String) it.next();
+            userRepository.deleteUser(s);
+        }
     }
 
     @Override

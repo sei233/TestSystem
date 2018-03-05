@@ -10,7 +10,7 @@ $(function () {
                 var string= "<tr>/n"
                     +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test'>"+"</td>/n"
                     +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>/n"
-                    +"<td width=\"20%\" align=\"center\">"+obj.userName+"</td>/n"
+                    +"<td width=\"20%\" align=\"center\" class='userName'>"+obj.userName+"</td>/n"
                     +"<td width=\"20%\" align=\"center\">"+obj.userPassword+"</td>/n"
                     +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>/n"
                     +"<td width=\"20%\" align=\"center\">"+obj.userRole+"</td>/n"
@@ -86,12 +86,16 @@ $(function () {
 
             $('#delete').click(function () {
                 table();
+                $("input[name='test']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
+                    names=$(this).parent("td").parent("tr").children("td.userName").html();
+                });
                 $.post({
                     url: 'http://localhost:8080/user/delete',
-                    data: "",
+                    data: names,
                     dataType: "json",
                     success: function (data) {
-
+                        usersList(data);
+                        pageNum(data);
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
                     error: function (data) {

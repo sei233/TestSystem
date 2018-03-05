@@ -9,10 +9,7 @@ package com.boot.controller;
 
 import com.boot.bean.base.HttpResult;
 import com.boot.bean.po.User;
-import com.boot.bean.vo.UserListVo;
-import com.boot.bean.vo.UserQueryVo;
-import com.boot.bean.vo.UserRole;
-import com.boot.bean.vo.UserVo;
+import com.boot.bean.vo.*;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
 import com.boot.service.UserService;
@@ -42,7 +39,7 @@ public class MainController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public HttpResult loginUser(UserVo userVo) throws BusiException {
         userService.loginUser(userVo);
-        UserRole httpResult=new UserRole();
+        UserRoleVo httpResult=new UserRoleVo();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setRole(userVo.getUserRole());
@@ -85,9 +82,9 @@ public class MainController {
     }
 
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    public HttpResult deleteUsers(UserVo userVo) throws BusiException {
+    public HttpResult deleteUsers(UserNamesVo userNames) throws BusiException {
         UserQueryVo userQueryVo=new UserQueryVo();
-        //userService.deleteUsers(userVo);
+        userService.deleteUsers(userNames);
         userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
         List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());

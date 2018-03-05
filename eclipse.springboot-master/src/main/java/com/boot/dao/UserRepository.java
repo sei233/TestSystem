@@ -27,4 +27,7 @@ public interface UserRepository extends JpaRepository<User,Long>,JpaSpecificatio
 
     @Query(value = "SELECT COUNT(user_name) from user",nativeQuery = true)
     int getCount();
+
+    @Query(value = "DELETE from user WHERE user_name=?1",nativeQuery = true)
+    void deleteUser(String userName);
 }
