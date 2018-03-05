@@ -84,6 +84,7 @@ $(function () {
             // })(i);
             // }
 
+            var names;
             $('#delete').click(function () {
                 table();
                 $("input[name='test']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
