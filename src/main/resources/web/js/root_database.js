@@ -86,12 +86,14 @@ $(function () {
 
             var list_map = new Array();
             $('#delete').click(function () {
-                //table();
+
                 $("input[name='test1']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
                     var names=$(this).parent("td").parent("tr").children("td.userName1").html();
-                    list_map.push({name:names});
+                    list_map.push(names);
                     console.log(list_map);
                 });
+
+                table();
                 $.post({
                     url: 'http://localhost:8080/user/delete',
                     data: list_map,

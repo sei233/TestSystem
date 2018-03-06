@@ -65,7 +65,7 @@ public class UserServiceImp implements UserService {
 
     @Override
     public void deleteUsers(UserNamesVo userNames) {
-        Iterator it = userNames.getUserNames().iterator();      //遍历userNames，然后一个一个删除
+        Iterator it = userNames.getUserNamesVo().iterator();      //遍历userNames，然后一个一个删除
         while(it.hasNext()){
             String s = (String) it.next();
             userRepository.deleteUser(s);

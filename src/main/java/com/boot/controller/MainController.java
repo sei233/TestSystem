@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //配置RestController注解，表示这个是Rest风格的controller，用来处理json的数据
@@ -82,9 +83,10 @@ public class MainController {
     }
 
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    public HttpResult deleteUsers(UserNamesVo userNames) throws BusiException {
+    public HttpResult deleteUsers(UserNamesVo userNamesvo) throws BusiException {
+        userNamesvo.getUserNamesVo();
         UserQueryVo userQueryVo=new UserQueryVo();
-        userService.deleteUsers(userNames);
+        userService.deleteUsers(userNamesvo);
         userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
         List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
