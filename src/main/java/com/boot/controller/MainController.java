@@ -92,6 +92,9 @@ public class MainController {
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
+        int size=userQueryVo.getSize();
+        int count=userService.getCount();
+        httpResult.setTotalPage(count/size);
         return httpResult;
     }
 }
