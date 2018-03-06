@@ -101,8 +101,8 @@ $(function () {
                     dataType: "json",
                     contentType:"application/json",
                     success: function (data) {
-                        // usersList(data);
-                        // pageNum(data);
+                         usersList(data);
+                         pageNum(data);
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
                     error: function (data) {
