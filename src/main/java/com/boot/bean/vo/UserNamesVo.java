@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 @Data
 public class UserNamesVo {
-    public ArrayList<String> userNamesVo;
+    public ArrayList<String> userNames;
 }

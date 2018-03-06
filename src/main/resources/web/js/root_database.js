@@ -86,18 +86,20 @@ $(function () {
 
             var list_map = new Array();
             $('#delete').click(function () {
-
                 $("input[name='test1']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
-                    var names=$(this).parent("td").parent("tr").children("td.userName1").html();
+                    var names=$(this).parent("td").parent("tr").children("td.userName1").html().toString();
                     list_map.push(names);
                     console.log(list_map);
                 });
-
+                var paramData={
+                    userNames:list_map
+                }
                 table();
                 $.post({
                     url: 'http://localhost:8080/user/delete',
-                    data: list_map,
+                    data: JSON.stringify(paramData),
                     dataType: "json",
+                    contentType:"application/json",
                     success: function (data) {
                         usersList(data);
                         pageNum(data);

@@ -14,6 +14,7 @@ import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
 import com.boot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -83,10 +84,10 @@ public class MainController {
     }
 
     @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    public HttpResult deleteUsers(UserNamesVo userNamesvo) throws BusiException {
-        userNamesvo.getUserNamesVo();
+    public HttpResult deleteUsers(@RequestBody UserNamesVo userNamesVo) throws BusiException {
+        userNamesVo.getUserNames();
         UserQueryVo userQueryVo=new UserQueryVo();
-        userService.deleteUsers(userNamesvo);
+        userService.deleteUsers(userNamesVo);
         userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
         List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
