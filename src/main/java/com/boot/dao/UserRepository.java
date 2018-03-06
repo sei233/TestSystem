@@ -29,5 +29,8 @@ public interface UserRepository extends JpaRepository<User,Long>,JpaSpecificatio
     int getCount();
 
     @Query(value = "DELETE from user WHERE user_name=?1",nativeQuery = true)
-    void deleteUser(String userName);
+    int deleteUser(String userName);
+
+    int deleteByUserName(String userName);       //该方法为空？
+
 }
