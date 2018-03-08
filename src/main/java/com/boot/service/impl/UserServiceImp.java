@@ -41,6 +41,11 @@ public class UserServiceImp implements UserService {
         user.setUserPassword(userVo.getUserPassword());
         user.setUserPhone(userVo.getUserPhone());
         user.setUserRole(userVo.getUserRole());
+        if(userVo.getUserRole()!=1){
+            user.setUserState(2);
+        }else{
+            user.setUserState(1);
+        }
         userRepository.save(user);
     }
 
@@ -55,6 +60,9 @@ public class UserServiceImp implements UserService {
         }
         if(user.getUserRole()!=userVo.getUserRole()||userVo.getUserRole()>6){                      //用的是userVo而不是user
             throw new BusiException(ResultCode.USER_ROLE_ERROR);
+        }
+        if(user.getUserState()!=1){                      //用的是userVo而不是user
+            throw new BusiException(ResultCode.USER_STATE_ERROR);
         }
     }
 
