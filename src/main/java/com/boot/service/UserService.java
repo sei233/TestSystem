@@ -18,5 +18,6 @@ public interface UserService {
     List<User> findUserByPage(int index,int size) throws BusiException;
     int getCount()throws BusiException;
     List<User> searchUser(String userName) throws BusiException;
+    List<User> findUserByState() throws BusiException;
 }
 

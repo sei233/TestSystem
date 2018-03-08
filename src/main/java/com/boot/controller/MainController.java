@@ -28,37 +28,38 @@ import java.util.List;
 public class MainController {
     @Autowired
     UserService userService;
-    UserListVo httpResult=new UserListVo();
-    @RequestMapping(value = "/regist",method = RequestMethod.POST)
+    UserListVo httpResult = new UserListVo();
+
+    @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
         userService.registeUser(userVo);
-        HttpResult httpResult=new HttpResult();
+        HttpResult httpResult = new HttpResult();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         return httpResult;
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public HttpResult loginUser(UserVo userVo) throws BusiException {
         userService.loginUser(userVo);
-        UserRoleVo httpResult=new UserRoleVo();
+        UserRoleVo httpResult = new UserRoleVo();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setRole(userVo.getUserRole());
         return httpResult;
     }
 
-    @RequestMapping(value = "/database",method = RequestMethod.POST)
+    @RequestMapping(value = "/database", method = RequestMethod.POST)
     public HttpResult queryUsers(UserQueryVo userQueryVo) throws BusiException {
-        int size=userQueryVo.getSize();
-        int count=userService.getCount();
+        int size = userQueryVo.getSize();
+        int count = userService.getCount();
         int total;
-        if(count%size==0){
-            total=count/size;
-        }else{
-            total=count/size+1;
+        if (count % size == 0) {
+            total = count / size;
+        } else {
+            total = count / size + 1;
         }
-        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
+        List<User> usersList = userService.findUserByPage(userQueryVo.getIndex(), userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
@@ -67,56 +68,67 @@ public class MainController {
         return httpResult;
     }
 
-    @RequestMapping(value = "/pageUp",method = RequestMethod.POST)
+    @RequestMapping(value = "/pageUp", method = RequestMethod.POST)
     public HttpResult queryLastPage(UserQueryVo userQueryVo) throws BusiException {
-        httpResult.setPage(httpResult.getPage()-1);
-        userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
-        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
+        httpResult.setPage(httpResult.getPage() - 1);
+        userQueryVo.setIndex((httpResult.getPage() - 1) * userQueryVo.getSize());
+        List<User> usersList = userService.findUserByPage(userQueryVo.getIndex(), userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
         return httpResult;
     }
 
-    @RequestMapping(value = "/pageDown",method = RequestMethod.POST)
+    @RequestMapping(value = "/pageDown", method = RequestMethod.POST)
     public HttpResult queryNextPage(UserQueryVo userQueryVo) throws BusiException {
-        httpResult.setPage(httpResult.getPage()+1);
-        userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
-        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
+        httpResult.setPage(httpResult.getPage() + 1);
+        userQueryVo.setIndex((httpResult.getPage() - 1) * userQueryVo.getSize());
+        List<User> usersList = userService.findUserByPage(userQueryVo.getIndex(), userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
         return httpResult;
     }
 
-    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public HttpResult deleteUsers(@RequestBody UserNamesVo userNamesVo) throws BusiException {
-        UserQueryVo userQueryVo=new UserQueryVo();
+        UserQueryVo userQueryVo = new UserQueryVo();
         userService.deleteUsers(userNamesVo);
-        userQueryVo.setIndex((httpResult.getPage()-1)*userQueryVo.getSize());
-        List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
+        userQueryVo.setIndex((httpResult.getPage() - 1) * userQueryVo.getSize());
+        List<User> usersList = userService.findUserByPage(userQueryVo.getIndex(), userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
-        int size=userQueryVo.getSize();
-        int count=userService.getCount();
+        int size = userQueryVo.getSize();
+        int count = userService.getCount();
         int total;
-        if(count%size==0){
-            total=count/size;
-        }else{
-            total=count/size+1;
+        if (count % size == 0) {
+            total = count / size;
+        } else {
+            total = count / size + 1;
         }
         httpResult.setTotalPage(total);
         return httpResult;
     }
 
-    @RequestMapping(value = "/search",method = RequestMethod.POST)
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
     public HttpResult searchUsers(UserVo userVo) throws BusiException {
-        List<User> usersList=userService.searchUser(userVo.getUserName());
-        UserListVo httpResult=new UserListVo();
+        List<User> usersList = userService.searchUser(userVo.getUserName());
+        UserListVo httpResult = new UserListVo();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
+        return httpResult;
+    }
+
+    @RequestMapping(value = "/application", method = RequestMethod.POST)
+    public HttpResult queryUser(UserQueryVo userQueryVo) throws BusiException {
+        List<User> usersList = userService.findUserByState();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        httpResult.setPage(1);
+        httpResult.setTotalPage(1);
         return httpResult;
     }
 }

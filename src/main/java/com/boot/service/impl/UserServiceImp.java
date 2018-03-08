@@ -93,6 +93,14 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public List<User> findUserByState() {
+        List<User> userList=new ArrayList();
+        User user=userRepository.findByUserState(2);
+        userList.add(user);
+        return userList;
+    }
+
+    @Override
     public List<User> searchUser(String userName) {
         List<User> userList=new ArrayList();
         User user=userRepository.findByUserName(userName);
