@@ -109,4 +109,14 @@ public class MainController {
         httpResult.setTotalPage(total);
         return httpResult;
     }
+
+    @RequestMapping(value = "/search",method = RequestMethod.POST)
+    public HttpResult searchUsers(UserVo userVo) throws BusiException {
+        List<User> usersList=userService.searchUser(userVo.getUserName());
+        UserListVo httpResult=new UserListVo();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        return httpResult;
+    }
 }

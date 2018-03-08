@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -83,7 +84,13 @@ public class UserServiceImp implements UserService {
         return userRepository.selectUser(index,size);
     }
 
-
+    @Override
+    public List<User> searchUser(String userName) {
+        List<User> userList=new ArrayList();
+        User user=userRepository.findByUserName(userName);
+        userList.add(user);
+        return userList;
+    }
 
     //获取总记录数
     public int getCount() {

@@ -22,7 +22,7 @@ $(function () {
                 alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
             }
         })
-    })
+    });
 
     $('#lo_submit').click(function() {
         var paramData = {
