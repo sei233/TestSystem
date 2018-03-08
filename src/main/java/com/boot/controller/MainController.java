@@ -52,12 +52,18 @@ public class MainController {
     public HttpResult queryUsers(UserQueryVo userQueryVo) throws BusiException {
         int size=userQueryVo.getSize();
         int count=userService.getCount();
+        int total;
+        if(count%size==0){
+            total=count/size;
+        }else{
+            total=count/size+1;
+        }
         List<User> usersList=userService.findUserByPage(userQueryVo.getIndex(),userQueryVo.getSize());
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setUsersList(usersList);
         httpResult.setPage(1);
-        httpResult.setTotalPage(count/size);  //整除
+        httpResult.setTotalPage(total);  //整除
         return httpResult;
     }
 
@@ -94,7 +100,13 @@ public class MainController {
         httpResult.setUsersList(usersList);
         int size=userQueryVo.getSize();
         int count=userService.getCount();
-        httpResult.setTotalPage(count/size);
+        int total;
+        if(count%size==0){
+            total=count/size;
+        }else{
+            total=count/size+1;
+        }
+        httpResult.setTotalPage(total);
         return httpResult;
     }
 }
