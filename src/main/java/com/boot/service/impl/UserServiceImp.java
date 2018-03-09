@@ -94,10 +94,7 @@ public class UserServiceImp implements UserService {
 
     @Override
     public List<User> findUserByState() {
-        List<User> userList=new ArrayList();
-        User user=userRepository.findByUserState(2);
-        userList.add(user);
-        return userList;
+        return userRepository.findByUserState(2);        //更改UserRepository的数据类型
     }
 
     @Override
