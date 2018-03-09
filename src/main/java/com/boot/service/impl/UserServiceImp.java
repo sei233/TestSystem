@@ -87,7 +87,9 @@ public class UserServiceImp implements UserService {
         Iterator it = userNamesVo.getUserNames().iterator();      //遍历userNames，然后一个一个删除
         while(it.hasNext()){
             String s = (String) it.next();
-            userRepository.update(s);
+            User user=userRepository.findByUserName(s);
+            user.setUserState(1);
+            userRepository.save(user);
         }
     }
 
