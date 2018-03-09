@@ -111,6 +111,16 @@ public class MainController {
         return httpResult;
     }
 
+    @RequestMapping(value = "/pass", method = RequestMethod.POST)
+    public HttpResult passUsers(@RequestBody UserNamesVo userNamesVo) throws BusiException {
+        userService.passUsers(userNamesVo);
+        List<User> usersList = userService.findUserByState();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        return httpResult;
+    }
+
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public HttpResult searchUsers(UserVo userVo) throws BusiException {
         List<User> usersList = userService.searchUser(userVo.getUserName());

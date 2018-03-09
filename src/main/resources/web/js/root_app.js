@@ -8,9 +8,9 @@ $(function () {
                 var usersList=data.usersList;
                 $.each(usersList,function (index,obj) {
                     var string= "<tr>/n"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test1'>"+"</td>/n"
+                        +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test2'>"+"</td>/n"
                         +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>/n"
-                        +"<td width=\"20%\" align=\"center\" class='userName1'>"+obj.userName+"</td>/n"
+                        +"<td width=\"20%\" align=\"center\" class='userName2'>"+obj.userName+"</td>/n"
                         +"<td width=\"20%\" align=\"center\">"+obj.userPassword+"</td>/n"
                         +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>/n"
                         +"<td width=\"20%\" align=\"center\">"+obj.userRole+"</td>/n"
@@ -56,6 +56,33 @@ $(function () {
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
                     error:function (data) {
+                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
+                    }
+                })
+            });
+
+            var list_map = new Array();
+            $('#pass').click(function (){
+                $("input[name='test2']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
+                    var names=$(this).parent("td").parent("tr").children("td.userName2").html().toString();
+                    list_map.push(names);
+                    console.log(list_map);
+                });
+                var paramData={
+                    userNames:list_map
+                }
+                table();
+                $.post({
+                    url: 'http://localhost:8080/user/pass',
+                    data: JSON.stringify(paramData),
+                    dataType: "json",
+                    contentType:"application/json",
+                    success: function (data) {
+                        usersList(data);
+                        pageNum(data);
+                        alert(data.errorCode + "   " + data.errorMessage);
+                    },
+                    error: function (data) {
                         alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
                     }
                 })

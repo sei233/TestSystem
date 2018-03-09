@@ -29,4 +29,6 @@ public interface UserRepository extends JpaRepository<User,Long>,JpaSpecificatio
     @Query(value = "SELECT COUNT(user_name) from user",nativeQuery = true)
     int getCount();
 
+    @Query(value = "UPDATE user SET user_state=1 WHERE user_name=?1",nativeQuery = true)
+    void update(String user);
 }
