@@ -6,4 +6,5 @@ import lombok.Data;
 @Data
 public class UserRoleVo extends HttpResult {
     private int role;
+    private String Name;
 }

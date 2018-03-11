@@ -29,6 +29,7 @@ public class MainController {
     @Autowired
     UserService userService;
     UserListVo httpResult = new UserListVo();
+    UserRoleVo login_name = new UserRoleVo();
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
@@ -42,10 +43,19 @@ public class MainController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public HttpResult loginUser(UserVo userVo) throws BusiException {
         userService.loginUser(userVo);
-        UserRoleVo httpResult = new UserRoleVo();
+        login_name.setErrorCode(ResultCode.SUCCESS.getCode());
+        login_name.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        login_name.setRole(userVo.getUserRole());//区分跳转页面
+        login_name.setName(userVo.getUserName());//方便学生教师登陆界面的名字
+        return login_name;
+    }
+
+    @RequestMapping(value = "/name", method = RequestMethod.POST)
+    public HttpResult getName() throws BusiException {
+        List<User> usersList = userService.findUserByName(login_name.getName());//返回给userlist
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
-        httpResult.setRole(userVo.getUserRole());
+        httpResult.setUsersList(usersList);
         return httpResult;
     }
 
