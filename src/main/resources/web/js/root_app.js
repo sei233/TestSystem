@@ -7,25 +7,25 @@ $(function () {
             function usersList(data){
                 var usersList=data.usersList;
                 $.each(usersList,function (index,obj) {
-                    var string= "<tr>/n"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test2'>"+"</td>/n"
-                        +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>/n"
-                        +"<td width=\"20%\" align=\"center\" class='userName2'>"+obj.userName+"</td>/n"
-                        +"<td width=\"20%\" align=\"center\">"+obj.userPassword+"</td>/n"
-                        +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>/n"
-                        +"<td width=\"20%\" align=\"center\">"+obj.userRole+"</td>/n"
-                        +"</tr>/n"
+                    var string= "<tr>"
+                        +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test2'>"+"</td>"
+                        +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>"
+                        +"<td width=\"20%\" align=\"center\" class='userName2'>"+obj.userName+"</td>"
+                        +"<td width=\"20%\" align=\"center\">"+obj.userPassword+"</td>"
+                        +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>"
+                        +"<td width=\"20%\" align=\"center\">"+obj.userRole+"</td>"
+                        +"</tr>"
                     $("#table").append(string);
                 });
             }
             function table() {
                 $("#table").html("<tr>\n" +
-                    "        <th width=\"10%\"></th>\n" +
-                    "        <th width=\"10%\">用户ID</th>\n" +
-                    "        <th width=\"20%\">用户名</th>\n" +
-                    "        <th width=\"20%\">密码</th>\n" +
-                    "        <th width=\"20%\">用户手机号</th>\n" +
-                    "        <th width=\"20%\">权限</th>\n" +
+                    "        <th width=\"10%\"></th>" +
+                    "        <th width=\"10%\">用户ID</th>" +
+                    "        <th width=\"20%\">用户名</th>" +
+                    "        <th width=\"20%\">密码</th>" +
+                    "        <th width=\"20%\">用户手机号</th>" +
+                    "        <th width=\"20%\">权限</th>" +
                     "    </tr>");
 
             }
