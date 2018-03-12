@@ -37,8 +37,8 @@ $(function () {
                     data: "",
                     dataType: "json",
                     success: function (data) {
-                        if(data.entrance==0) window.location.assign("../study/study_test.html")
-                        if(data.entrance==1) window.location.assign("../study/study_repo.html")
+                        if(data.study==0) window.location.assign("../study/study_test.html")
+                        if(data.study==1) window.location.assign("../study/study_repo.html")
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
                     error: function (data) {
@@ -53,8 +53,8 @@ $(function () {
                     data: "",
                     dataType: "json",
                     success: function (data) {
-                        if(data.entrance==0) window.location.assign("../graduation/gradu_test.html")
-                        if(data.entrance==1) window.location.assign("../graduation/gradu_repo.html")
+                        if(data.graduation==0) window.location.assign("../graduation/gradu_test.html")
+                        if(data.graduation==1) window.location.assign("../graduation/gradu_repo.html")
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
                     error: function (data) {
