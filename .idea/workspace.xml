@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/specification/package-info.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/specification/package-info.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/utils/package-info.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/utils/package-info.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test.html" afterPath="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/web/js/entrance_test.js" afterPath="$PROJECT_DIR$/src/main/resources/web/js/entrance_test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,8 +39,8 @@
       <file leaf-file-name="entrance_test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/entrance_test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="94" lean-forward="false" selection-start-line="11" selection-start-column="94" selection-end-line="11" selection-end-column="94" />
+            <state relative-caret-position="345">
+              <caret line="15" column="96" lean-forward="false" selection-start-line="15" selection-start-column="96" selection-end-line="15" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -846,7 +845,7 @@
       <workItem from="1520818358438" duration="3656000" />
       <workItem from="1520837351359" duration="6993000" />
       <workItem from="1520844399873" duration="593000" />
-      <workItem from="1520862311108" duration="2549000" />
+      <workItem from="1520862311108" duration="3686000" />
     </task>
     <task id="LOCAL-00001" summary="提交内容：框架搭建完成&#10;提交时间：2018年1月5日16:44:59&#10;提交人：陈翔">
       <created>1515141934813</created>
@@ -1016,11 +1015,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520844658374</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="提交内容：答案该怎么做&#10;提交时间：2018年3月12日22:27:59&#10;提交人：石乾">
+      <created>1520864905487</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1520864905487</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85686000" />
+    <option name="totallyTimeSpent" value="86823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1045,7 +1051,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3889503" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20989583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20989583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1088,7 +1094,8 @@
     <MESSAGE value="提交内容：学生界面跳转补充&#10;提交时间：2018年3月12日9:42:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：优化&#10;提交时间：2018年3月12日9:42:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：问题八成在js上&#10;提交时间：2018年3月12日16:49:59&#10;提交人：石乾" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交内容：问题八成在js上&#10;提交时间：2018年3月12日16:49:59&#10;提交人：石乾" />
+    <MESSAGE value="提交内容：答案该怎么做&#10;提交时间：2018年3月12日22:27:59&#10;提交人：石乾" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交内容：答案该怎么做&#10;提交时间：2018年3月12日22:27:59&#10;提交人：石乾" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1326,6 +1333,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,8 +1508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/entrance_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="94" lean-forward="false" selection-start-line="11" selection-start-column="94" selection-end-line="11" selection-end-column="94" />
+        <state relative-caret-position="345">
+          <caret line="15" column="96" lean-forward="false" selection-start-line="15" selection-start-column="96" selection-end-line="15" selection-end-column="96" />
           <folding />
         </state>
       </provider>

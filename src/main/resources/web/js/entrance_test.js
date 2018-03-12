@@ -7,15 +7,16 @@ $(function () {
             function testsList(data){
                 var testsList=data.testList;
                 $.each(testsList,function (index,obj) {
-                    var string= "<tr>"
-                        +"<td width=\"10%\" align=\"center\">"+obj.question+"</td>"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test1'>"+"</td>"   //相同name只能取一个
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test1'>"+"</td>"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test1'>"+"</td>"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test1'>"+"</td>"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test1'>"+"</td>"
-                        +"</tr>"
-                    $("#questions").append(string);
+                        var string= "<tr>"
+                            +"<td width=\"10%\" align=\"center\">"+obj.question+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"'>"+"</td>"   //相同name只能取一个
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"'>"+"</td>"
+                            +"</tr>"
+                        $("#questions").append(string);
+
                 });
             }
 
