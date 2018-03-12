@@ -8,10 +8,12 @@
 package com.boot.controller;
 
 import com.boot.bean.base.HttpResult;
+import com.boot.bean.po.Test;
 import com.boot.bean.po.User;
 import com.boot.bean.vo.*;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
+import com.boot.service.TestService;
 import com.boot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +30,8 @@ import java.util.List;
 public class MainController {
     @Autowired
     UserService userService;
+    @Autowired
+    TestService testService;
     UserListVo httpResult = new UserListVo();
     UserRoleVo login_name = new UserRoleVo();
 
@@ -159,6 +163,16 @@ public class MainController {
         login_name.setErrorMessage(ResultCode.SUCCESS.getMessage());
         login_name.setEntrance(user.getUserEntrance());
         return login_name;
+    }
+
+    @RequestMapping(value = "/test1", method = RequestMethod.POST)
+    public HttpResult test1() throws BusiException {
+        TestVo httpResult=new TestVo();
+        List<Test> tests= testService.findAllTest();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setTestList(tests);
+        return httpResult;
     }
 
     @RequestMapping(value = "/study", method = RequestMethod.POST)

@@ -8,14 +8,9 @@ $(function () {
                 var usersList=data.usersList;
                 $.each(usersList,function (index,obj) {
                     var string= "<tr>"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test1'>"+"</td>"
-                        +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>"
-                        +"<td width=\"20%\" align=\"center\" class='userName1'>"+obj.userName+"</td>"
-                        +"<td width=\"20%\" align=\"center\">"+obj.userPassword+"</td>"
-                        +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>"
-                        +"<td width=\"20%\" align=\"center\">"+obj.userRole+"</td>"
+                        +"<td width=\"10%\" align=\"center\">"+obj.question+"</td>"
                         +"</tr>"
-                    $("#table_id_example").append(string);
+                    $("#questions").append(string);
                 });
             }
 
