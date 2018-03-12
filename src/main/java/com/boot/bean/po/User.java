@@ -32,4 +32,10 @@ public class User {
     private int userRole;
     @Column(name = "user_state")
     private int userState;
+    @Column(name = "user_entrance")
+    private int userEntrance;
+    @Column(name = "user_study")
+    private int userStudy;
+    @Column(name = "user_graduation")
+    private int userGraduation;
 }

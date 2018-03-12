@@ -21,5 +21,6 @@ public interface UserService {
     List<User> searchUser(String userName) throws BusiException;
     List<User> findUserByState() throws BusiException;
     List<User> findUserByName(String name) throws BusiException;
+    User findByName(String name) throws BusiException;
 }
 

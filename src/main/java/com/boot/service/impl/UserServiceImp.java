@@ -41,6 +41,9 @@ public class UserServiceImp implements UserService {
         user.setUserPassword(userVo.getUserPassword());
         user.setUserPhone(userVo.getUserPhone());
         user.setUserRole(userVo.getUserRole());
+        user.setUserEntrance(0);
+        user.setUserStudy(0);
+        user.setUserGraduation(0);
         if(userVo.getUserRole()!=1){
             user.setUserState(2);
         }else{
@@ -114,6 +117,11 @@ public class UserServiceImp implements UserService {
         User user=userRepository.findByUserName(name);
         userList.add(user);
         return userList;
+    }
+
+    @Override
+    public User findByName(String name) {
+        return userRepository.findByUserName(name);
     }
 
     @Override

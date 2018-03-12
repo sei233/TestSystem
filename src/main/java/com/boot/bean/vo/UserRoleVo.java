@@ -7,4 +7,7 @@ import lombok.Data;
 public class UserRoleVo extends HttpResult {
     private int role;
     private String Name;
+    private int entrance;
+    private int study;
+    private int graduation;
 }

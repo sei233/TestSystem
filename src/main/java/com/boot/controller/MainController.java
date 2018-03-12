@@ -151,4 +151,31 @@ public class MainController {
         httpResult.setTotalPage(1);
         return httpResult;
     }
+
+    @RequestMapping(value = "/entrance", method = RequestMethod.POST)
+    public HttpResult entrance() throws BusiException {
+        User user=userService.findByName(login_name.getName());
+        login_name.setErrorCode(ResultCode.SUCCESS.getCode());
+        login_name.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        login_name.setEntrance(user.getUserEntrance());
+        return login_name;
+    }
+
+    @RequestMapping(value = "/study", method = RequestMethod.POST)
+    public HttpResult study() throws BusiException {
+        User user=userService.findByName(login_name.getName());
+        login_name.setErrorCode(ResultCode.SUCCESS.getCode());
+        login_name.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        login_name.setStudy(user.getUserStudy());
+        return login_name;
+    }
+
+    @RequestMapping(value = "/graduation", method = RequestMethod.POST)
+    public HttpResult graduation() throws BusiException {
+        User user=userService.findByName(login_name.getName());
+        login_name.setErrorCode(ResultCode.SUCCESS.getCode());
+        login_name.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        login_name.setGraduation(user.getUserGraduation());
+        return login_name;
+    }
 }
