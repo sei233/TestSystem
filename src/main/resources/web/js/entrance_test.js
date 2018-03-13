@@ -76,7 +76,7 @@ $(function () {
             $('#pageUp').click(function () {
                 table();
                 $.post({
-                    url: 'http://localhost:8080/user/pageDown_test1',
+                    url: 'http://localhost:8080/user/pageUp_test1',
                     data: "",
                     dataType: "json",
                     success: function (data) {
