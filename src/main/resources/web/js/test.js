@@ -1,10 +1,9 @@
 $(function () {
     var names;
     $('#delete1').click(function () {
-         $("input[name='test']:checkbox:checked").each(function () {   //遍历所有选中的checkbox
-             names = $(this).parent("td").parent("tr").children("td.userName").html();
+        var names=$("input[type=checkbox]:checked").attr("id").toString();//发挥2个值赋予1个值
             $("#table_id_example").append(names);
             console.log(names);
-        });
+
      });
 })
