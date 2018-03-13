@@ -19,7 +19,7 @@ $(function () {
                 });
             }
             function table() {
-                $("#table").html("<tr>\n" +
+                $("#table").html("<tr>" +
                     "        <th width=\"10%\"></th>" +
                     "        <th width=\"10%\">用户ID</th>" +
                     "        <th width=\"20%\">用户名</th>" +

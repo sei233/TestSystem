@@ -19,13 +19,13 @@ $(function () {
             });
             }
             function table() {
-                $("#table_id_example").html("<tr>\n" +
-                    "        <th width=\"10%\"></th>\n" +
-                    "        <th width=\"10%\">用户ID</th>\n" +
-                    "        <th width=\"20%\">用户名</th>\n" +
-                    "        <th width=\"20%\">密码</th>\n" +
-                    "        <th width=\"20%\">用户手机号</th>\n" +
-                    "        <th width=\"20%\">权限</th>\n" +
+                $("#table_id_example").html("<tr>" +
+                    "        <th width=\"10%\"></th>" +
+                    "        <th width=\"10%\">用户ID</th>" +
+                    "        <th width=\"20%\">用户名</th>" +
+                    "        <th width=\"20%\">密码</th>" +
+                    "        <th width=\"20%\">用户手机号</th>" +
+                    "        <th width=\"20%\">权限</th>" +
                     "    </tr>");
 
             }
@@ -89,7 +89,7 @@ $(function () {
                 $("input[name='test1']:checkbox:checked").each(function(){   //遍历所有选中的checkbox
                     var names=$(this).parent("td").parent("tr").children("td.userName1").html().toString();
                     list_map.push(names);
-                    console.log(list_map);
+                  //  console.log(list_map);
                 });
                 var paramData={
                     userNames:list_map

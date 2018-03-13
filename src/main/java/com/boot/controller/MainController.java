@@ -184,6 +184,17 @@ public class MainController {
         return Result;
     }
 
+    @RequestMapping(value = "/pageDown_test1", method = RequestMethod.POST)
+    public HttpResult queryNextPage_test1(TestQueryVo testQueryVo) throws BusiException {
+        Result.setPage(Result.getPage() + 1);
+        testQueryVo.setIndex((Result.getPage() - 1) * testQueryVo.getSize());
+        List<Test> testsList = testService.findTestByPage(testQueryVo.getIndex(), testQueryVo.getSize());
+        Result.setErrorCode(ResultCode.SUCCESS.getCode());
+        Result.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        Result.setTestList(testsList);
+        return Result;
+    }
+
     @RequestMapping(value = "/study", method = RequestMethod.POST)
     public HttpResult study() throws BusiException {
         User user=userService.findByName(login_name.getName());

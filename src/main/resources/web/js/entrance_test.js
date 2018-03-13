@@ -18,12 +18,27 @@ $(function () {
                         $("#questions").append(string);
                 });
             }
+            function pageNum(data){
+                $("#pageNum").html("<label>"+"当前页面:"+"</label>");
+                $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
+            }
+            function table() {
+                $("#questions").html("<tr>" +
+                    "        <th width=\"10%\"></th>" +
+                    "        <th width=\"10%\">非常同意</th>" +
+                    "        <th width=\"20%\">比较同意</th>" +
+                    "        <th width=\"20%\">差不多</th>" +
+                    "        <th width=\"20%\">一点同意</th>" +
+                    "        <th width=\"20%\">不同意</th>" +
+                    "    </tr>");
+            }
 
             var list_map = new Array();
             $('#submit').click(function () {
                 $("input:radio:checked").each(function(){   //遍历所有选中的radio
                     var names=parseInt($(this).attr("id").toString());
                     list_map.push(names);
+                    //console.log(list_map)
                 });
 
                 var test1=list_map[4]+list_map[9]+list_map[13]+list_map[17]+list_map[23]+list_map[29];  //5、10、14、18、24、30
@@ -38,9 +53,42 @@ $(function () {
                 console.log("变色龙:"+test5);
             });
 
-
-
             testsList(data);
+            $("#pageNum").append("<label>"+"["+data.page+"/"+data.totalPage+"]"+"</label>");
+
+            $('#pageDown').click(function () {
+                table();
+                $.post({
+                    url: 'http://localhost:8080/user/pageDown_test1',
+                    data: "",
+                    dataType: "json",
+                    success: function (data) {
+                        testsList(data);
+                        pageNum(data);
+                        alert(data.errorCode + "   " + data.errorMessage);
+                    },
+                    error: function (data) {
+                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
+                    }
+                })
+            });                             //获得自动提交
+
+            $('#pageUp').click(function () {
+                table();
+                $.post({
+                    url: 'http://localhost:8080/user/pageDown_test1',
+                    data: "",
+                    dataType: "json",
+                    success: function (data) {
+                        testsList(data);
+                        pageNum(data);
+                        alert(data.errorCode + "   " + data.errorMessage);
+                    },
+                    error: function (data) {
+                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
+                    }
+                })
+            });
 
             alert(data.errorCode + "   " + data.errorMessage);
         },
