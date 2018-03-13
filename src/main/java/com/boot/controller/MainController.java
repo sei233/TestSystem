@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //配置RestController注解，表示这个是Rest风格的controller，用来处理json的数据
@@ -30,10 +29,11 @@ import java.util.List;
 public class MainController {
     @Autowired
     UserService userService;
-    @Autowired
-    TestService testService;
     UserListVo httpResult = new UserListVo();
     UserRoleVo login_name = new UserRoleVo();
+    @Autowired
+    TestService testService;
+    TestListVo Result=new TestListVo();
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
@@ -167,12 +167,11 @@ public class MainController {
 
     @RequestMapping(value = "/test1", method = RequestMethod.POST)
     public HttpResult test1() throws BusiException {
-        TestVo httpResult=new TestVo();
         List<Test> tests= testService.findAllTest();
-        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
-        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
-        httpResult.setTestList(tests);
-        return httpResult;
+        Result.setErrorCode(ResultCode.SUCCESS.getCode());
+        Result.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        Result.setTestList(tests);
+        return Result;
     }
 
     @RequestMapping(value = "/study", method = RequestMethod.POST)

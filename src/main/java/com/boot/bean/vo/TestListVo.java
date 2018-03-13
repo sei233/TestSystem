@@ -6,7 +6,8 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class TestVo extends HttpResult {
+public class TestListVo extends HttpResult {
     List<Test> testList;
-
+    private int page;
+    private int totalPage;
 }
