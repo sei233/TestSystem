@@ -11,6 +11,6 @@ import java.util.List;
 public interface TestService {
 
     List<Test> findAllTest() throws BusiException;
-
+    List<Test> findTestByPage(int index,int size) throws BusiException;
 }
 

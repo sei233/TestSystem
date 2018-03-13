@@ -21,4 +21,7 @@ public interface TestRepository extends JpaRepository<Test,Long>,JpaSpecificatio
     @Query(value = "SELECT * FROM test WHERE user_name=?1 AND user_id=?2",nativeQuery = true)
     public Test findUserByUserNameAndUserId(String userName, Long userId);
 
+    @Query(value = "SELECT * FROM test limit ?1,?2",nativeQuery = true)
+    List<Test> selectTest(int index, int size);
+
 }

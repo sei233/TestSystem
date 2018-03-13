@@ -166,11 +166,11 @@ public class MainController {
     }
 
     @RequestMapping(value = "/test1", method = RequestMethod.POST)
-    public HttpResult test1() throws BusiException {
-        List<Test> tests= testService.findAllTest();
+    public HttpResult test1(TestQueryVo testQueryVo) throws BusiException {
+        List<Test> testsList = testService.findTestByPage(testQueryVo.getIndex(), testQueryVo.getSize());
         Result.setErrorCode(ResultCode.SUCCESS.getCode());
         Result.setErrorMessage(ResultCode.SUCCESS.getMessage());
-        Result.setTestList(tests);
+        Result.setTestList(testsList);
         return Result;
     }
 
