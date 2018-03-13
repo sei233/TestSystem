@@ -29,4 +29,9 @@ public class TestServiceImp implements TestService {
     public List<Test> findTestByPage(int index, int size) {
         return testRepository.selectTest(index,size);
     }
+
+    @Override
+    public int getCount() {
+            return testRepository.getCount();
+    }
 }

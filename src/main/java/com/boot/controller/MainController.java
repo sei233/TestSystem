@@ -167,10 +167,20 @@ public class MainController {
 
     @RequestMapping(value = "/test1", method = RequestMethod.POST)
     public HttpResult test1(TestQueryVo testQueryVo) throws BusiException {
+        int size = testQueryVo.getSize();
+        int count =testService.getCount();
+        int total;
+        if (count % size == 0) {
+            total = count / size;
+        } else {
+            total = count / size + 1;
+        }
         List<Test> testsList = testService.findTestByPage(testQueryVo.getIndex(), testQueryVo.getSize());
         Result.setErrorCode(ResultCode.SUCCESS.getCode());
         Result.setErrorMessage(ResultCode.SUCCESS.getMessage());
         Result.setTestList(testsList);
+        Result.setPage(1);
+        Result.setTotalPage(total);  //整除
         return Result;
     }
 

@@ -24,4 +24,6 @@ public interface TestRepository extends JpaRepository<Test,Long>,JpaSpecificatio
     @Query(value = "SELECT * FROM test limit ?1,?2",nativeQuery = true)
     List<Test> selectTest(int index, int size);
 
+    @Query(value = "SELECT COUNT(question) from test",nativeQuery = true)
+    int getCount();
 }
