@@ -10,13 +10,14 @@ $(function () {
             function testsList(data){
                 var testsList=data.testList;
                 $.each(testsList,function (index,obj) {
+                        var datas=data.page-1;
                         var string= "<tr>"
                             +"<td width=\"10%\" align=\"center\" id='"+index.toString()+"'>"+obj.question+"</td>"
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"' id='5'>"+"</td>"   //相同name只能取一个
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"' id='4'>"+"</td>"
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"' id='3'>"+"</td>"
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"' id='2'>"+"</td>"
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+index.toString()+"' id='1'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='5'>"+"</td>"   //相同name只能取一个
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='4'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='3'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='2'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='1'>"+"</td>"
                             +"</tr>"
                         $("#questions").append(string);
                 });
@@ -38,16 +39,22 @@ $(function () {
             function radio() {
                     $("input:radio:checked").each(function(){   //遍历所有选中的radio获得他们的id和name
                         var ids=parseInt($(this).attr("id").toString());
-                        id_map.push(ids);
+                        id_map.push(ids);       //如果ids存在替换，不存在则push
                         console.log(id_map);
                         $.cookie('id',id_map);
 
-                        var names=$(this).attr("name").toString();
+                        var names=$(this).attr("name").toString();   //不停上下页，可能会导致死机
                         name_map.push(names);
                         console.log(name_map);
                         $.cookie('name',name_map);
                     });
             }
+            function read(){
+                for(var i=0;i<=id_map.length;i++) {
+                    if(id_map[i]==null)break;
+                    $("input[id='"+id_map[i]+"'][name='"+name_map[i]+"']:radio").attr('checked',true);
+                }
+            }    //如果用户数量多，临时数据巨大，需要改成缓存
 
             testsList(data);
 
@@ -83,6 +90,7 @@ $(function () {
                     dataType: "json",
                     success: function (data) {
                         testsList(data);
+                        read();
                         pageNum(data);
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
@@ -93,6 +101,7 @@ $(function () {
             });                             //获得自动提交
 
             $('#pageUp').click(function () {
+                radio();
                 table();
                 $.post({
                     url: 'http://localhost:8080/user/pageUp_test1',
@@ -100,7 +109,7 @@ $(function () {
                     dataType: "json",
                     success: function (data) {
                         testsList(data);
-                        for(var i=0;i<=29;i++) $("input[id='"+id_map[i]+"'][name='"+name_map[i]+"']:radio").attr('checked',true);    //如果用户数量多，临时数据巨大
+                        read();
                         pageNum(data);
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
