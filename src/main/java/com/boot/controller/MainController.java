@@ -184,6 +184,14 @@ public class MainController {
         return Result;
     }
 
+    @RequestMapping(value = "/stu_ans", method = RequestMethod.POST)
+    public HttpResult storeTests(@RequestBody TestStuVo testStuVo) throws BusiException {      //存储成功
+        HttpResult httpResult=new HttpResult();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        return httpResult;
+    }
+
     @RequestMapping(value = "/pageDown_test1", method = RequestMethod.POST)
     public HttpResult queryNextPage_test1(TestQueryVo testQueryVo) throws BusiException {
         Result.setPage(Result.getPage() + 1);

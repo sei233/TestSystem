@@ -36,17 +36,38 @@ $(function () {
                     "        <th width=\"20%\">不同意</th>" +
                     "    </tr>");
             }
+            function getNum(arr, val) {
+                for(var i=0; i<arr.length; i++) {
+                    if(arr[i] == val) {
+                        return i;
+                    }
+                }
+            }          //判断值是第几个
+            function removeByValue(arr, val) {
+                for(var i=0; i<arr.length; i++) {
+                    if(arr[i] == val) {
+                        arr.splice(i, 1);
+                        break;
+                    }
+                }
+            }   //根据值来移除数组中的元素
             function radio() {
-                    $("input:radio:checked").each(function(){   //遍历所有选中的radio获得他们的id和name
-                        var ids=parseInt($(this).attr("id").toString());
-                        id_map.push(ids);       //如果ids存在替换，不存在则push
+                    $("input:radio:checked").each(function(){                               //遍历当前页面，默认排序,所有选中的radio获得他们的id和name
+                        var ids=parseInt($(this).attr("id").toString());                    // 不停上下页，可能会导致死机
+                        var names=$(this).attr("name").toString();
+                        if($.inArray(names,name_map)>= 0) {                                  //找到匹配元素
+                            var i=getNum(name_map,names);
+                            removeByValue(name_map,names);
+                            name_map.push(names);
+                                                               //id 和 name 一一对应
+                            id_map.splice(i,1);
+                            id_map.push(ids);
+                        }
+                        else{ name_map.push(names);
+                              id_map.push(ids);}
                         console.log(id_map);
-                        $.cookie('id',id_map);
-
-                        var names=$(this).attr("name").toString();   //不停上下页，可能会导致死机
-                        name_map.push(names);
                         console.log(name_map);
-                        $.cookie('name',name_map);
+                        //$.cookie('name',name_map);
                     });
             }
             function read(){
@@ -62,7 +83,24 @@ $(function () {
 
             $('#submit').click(function () {
                 radio();
-                });
+                var paramData={
+                    testAns:id_map,
+                    testNum:name_map
+                };
+                $.post({
+                    url: 'http://localhost:8080/user/stu_ans',
+                    data: JSON.stringify(paramData),
+                    dataType: "json",
+                    contentType:"application/json",
+                    success: function (data) {
+                        alert(data.errorCode + "   " + data.errorMessage);
+                        //跳转下一题
+                    },
+                    error: function (data) {
+                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
+                    }
+                })
+            });
 
                 // var test1=list_map[4]+list_map[9]+list_map[13]+list_map[17]+list_map[23]+list_map[29];  //5、10、14、18、24、30
                 // console.log("老虎:"+test1);
