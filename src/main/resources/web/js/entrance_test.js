@@ -43,25 +43,25 @@ $(function () {
                     }
                 }
             }          //判断值是第几个
-            function removeByValue(arr, val) {
-                for(var i=0; i<arr.length; i++) {
-                    if(arr[i] == val) {
-                        arr.splice(i, 1);
-                        break;
-                    }
-                }
-            }   //根据值来移除数组中的元素
+            // function removeByValue(arr, val) {
+            //     for(var i=0; i<arr.length; i++) {
+            //         if(arr[i] == val) {
+            //             arr.splice(i, 1);
+            //             break;
+            //         }
+            //     }
+            // }   //根据值来移除数组中的元素
             function radio() {
                     $("input:radio:checked").each(function(){                               //遍历当前页面，默认排序,所有选中的radio获得他们的id和name
                         var ids=parseInt($(this).attr("id").toString());                    // 不停上下页，可能会导致死机
                         var names=$(this).attr("name").toString();
                         if($.inArray(names,name_map)>= 0) {                                  //找到匹配元素
                             var i=getNum(name_map,names);
-                            removeByValue(name_map,names);
-                            name_map.push(names);
-                                                               //id 和 name 一一对应
-                            id_map.splice(i,1);
-                            id_map.push(ids);
+                         //   removeByValue(name_map,names);
+                            name_map[i]=names;                                                 //这就是替换
+                                                                                               //id 和 name 一一对应
+                         //   id_map.splice(i,1);
+                            id_map[i]=ids;
                         }
                         else{ name_map.push(names);
                               id_map.push(ids);}
