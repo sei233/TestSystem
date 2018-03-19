@@ -13,6 +13,8 @@ import com.boot.bean.po.User;
 import com.boot.bean.vo.*;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
+import com.boot.dao.EntrRepository;
+import com.boot.service.EntrService;
 import com.boot.service.TestService;
 import com.boot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +31,13 @@ import java.util.List;
 public class MainController {
     @Autowired
     UserService userService;
-    UserListVo httpResult = new UserListVo();
-    UserRoleVo login_name = new UserRoleVo();
+    UserListVo httpResult = new UserListVo();       //userList+page+totalpage
+    UserRoleVo login_name = new UserRoleVo();       //id name entrance study graduation
     @Autowired
     TestService testService;
-    TestListVo Result=new TestListVo();
+    TestListVo Result=new TestListVo();            //testList+page+totalpage
+    @Autowired
+    EntrService entrService;
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
@@ -186,6 +190,8 @@ public class MainController {
 
     @RequestMapping(value = "/stu_ans", method = RequestMethod.POST)
     public HttpResult storeTests(@RequestBody TestStuVo testStuVo) throws BusiException {      //存储成功
+        String name=login_name.getName();
+        entrService.calculate(testStuVo,name);
         HttpResult httpResult=new HttpResult();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
