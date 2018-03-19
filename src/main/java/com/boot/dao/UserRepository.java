@@ -19,6 +19,7 @@ public interface UserRepository extends JpaRepository<User,Long>,JpaSpecificatio
     //简单的查询，findBy(bean字段名，首字母大写)，后面可以继续跟and或者or，按照这种规则写 spring data jpa会自动实现这个方法
     public User findByUserName(String userName);
     public List<User> findByUserState(int userState);
+    public List<User> findByUserEntrance(int userEntrance);
     //要想用sql语句直接写复杂查询，按照这个这么写就行了，?1是参数占位符,注意这里就没有按照规则findBy出来
     @Query(value = "SELECT * FROM USER WHERE user_name=?1 AND user_id=?2",nativeQuery = true)
     public User findUserByUserNameAndUserId(String userName,Long userId);

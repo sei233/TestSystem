@@ -238,4 +238,15 @@ public class MainController {
         login_name.setGraduation(user.getUserGraduation());
         return login_name;
     }
+
+    @RequestMapping(value = "/correct", method = RequestMethod.POST)
+    public HttpResult searchStudent(TestQueryVo testQueryVo) throws BusiException {
+        List<User> usersList = userService.findUserByEntrance();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        httpResult.setPage(1);
+        httpResult.setTotalPage(1);
+        return httpResult;
+    }
 }
