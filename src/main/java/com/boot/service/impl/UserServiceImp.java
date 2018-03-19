@@ -136,4 +136,11 @@ public class UserServiceImp implements UserService {
     public int getCount() {
         return userRepository.getCount();
     }
+
+    @Override
+    public void setUserEntrance(String name, int state) {
+        User user=userRepository.findByUserName(name);
+        user.setUserEntrance(state);
+        userRepository.save(user);
+    }
 }

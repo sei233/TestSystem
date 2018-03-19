@@ -192,6 +192,7 @@ public class MainController {
     public HttpResult storeTests(@RequestBody TestStuVo testStuVo) throws BusiException {      //存储成功
         String name=login_name.getName();
         entrService.calculate(testStuVo,name);
+        userService.setUserEntrance(name,1);
         HttpResult httpResult=new HttpResult();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
