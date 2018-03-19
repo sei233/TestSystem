@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="021bf75a-822b-477e-a9fb-7a65a2399dd9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/service/EntrService.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/service/EntrService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/core/ResultCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/core/ResultCode.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/service/impl/EntrServiceImp.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/service/impl/EntrServiceImp.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,65 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="193" column="46" lean-forward="true" selection-start-line="193" selection-start-column="46" selection-end-line="193" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntrService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/EntrService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntrServiceImp.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/impl/EntrServiceImp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/impl/UserServiceImp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
-              <folding>
-                <element signature="method#registeUser#0;class#UserServiceImp#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntrRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/dao/EntrRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1521427829967" expanded="true" signature="807:863" ph="SELECT * FRO... entrance" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,7 +47,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/web/html/root/root_database.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/root_application.js" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/r.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/boot/core/ResultCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/dao/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/root/root_ application.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/root/root_main.html" />
@@ -138,7 +78,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/web/js/root_database.js" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/root_app.js" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/TestStuVo.java" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/entrance_test.js" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/eco.js" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/teacher/teacher_main.html" />
@@ -148,7 +87,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_search.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/EntrService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/TestStuVo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/impl/EntrServiceImp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/boot/core/ResultCode.java" />
       </list>
     </option>
   </component>
@@ -290,6 +231,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="boot" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TestSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TestSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="boot" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TestSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -898,7 +848,7 @@
       <workItem from="1521266563439" duration="701000" />
       <workItem from="1521336045382" duration="4717000" />
       <workItem from="1521421645577" duration="2020000" />
-      <workItem from="1521427576339" duration="1045000" />
+      <workItem from="1521427576339" duration="2684000" />
     </task>
     <task id="LOCAL-00001" summary="提交内容：框架搭建完成&#10;提交时间：2018年1月5日16:44:59&#10;提交人：陈翔">
       <created>1515141934813</created>
@@ -1166,11 +1116,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521427976535</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="提交内容：bug测试&#10;      提交时间：2018年3月19日11:02:59&#10;      提交人：石乾">
+      <created>1521428638262</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1521428638262</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140289000" />
+    <option name="totallyTimeSpent" value="141928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1217,7 +1174,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="提交内容：添加了状态&#10;提交时间：2018年3月8日15:48:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：显示状态&#10;提交时间：2018年3月8日16:18:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：修改1&#10;提交时间：2018年3月8日16:18:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：又是卡在结果集&#10;提交时间：2018年3月9日10:48:59&#10;提交人：石乾" />
@@ -1242,11 +1198,12 @@
     <MESSAGE value="提交内容：教师主界面&#10;提交时间：2018年3月18日10:31:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：教师主界面&#10;      提交时间：2018年3月18日10:31:59&#10;      提交人：石乾" />
     <MESSAGE value="提交内容：bug测试&#10;      提交时间：2018年3月19日10:51:59&#10;      提交人：石乾" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交内容：bug测试&#10;      提交时间：2018年3月19日10:51:59&#10;      提交人：石乾" />
+    <MESSAGE value="提交内容：bug测试&#10;      提交时间：2018年3月19日11:02:59&#10;      提交人：石乾" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交内容：bug测试&#10;      提交时间：2018年3月19日11:02:59&#10;      提交人：石乾" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="94" />
+      <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1255,13 +1212,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application-develop.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1444,13 +1394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/vo/TestStuVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1472,27 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/eco.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/entrance_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="60" column="102" lean-forward="false" selection-start-line="60" selection-start-column="102" selection-end-line="60" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/student_main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="63" column="15" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="63" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1592,20 +1514,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/student_main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="63" column="15" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="63" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/vo/TestStuVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/eco.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/impl/UserServiceImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="299">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/entrance_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="104" column="16" lean-forward="true" selection-start-line="104" selection-start-column="16" selection-end-line="113" selection-end-column="45" />
           <folding>
-            <element signature="method#registeUser#0;class#UserServiceImp#0" expanded="false" />
+            <element signature="e#269#1423#0" expanded="false" />
+            <element signature="e#370#1407#0" expanded="false" />
+            <element signature="e#1458#1648#0" expanded="false" />
+            <element signature="e#1678#2127#0" expanded="false" />
+            <element signature="e#2166#2345#0" expanded="false" />
+            <element signature="e#2355#2364#0" expanded="false" />
+            <element signature="e#3872#4106#0" expanded="false" />
+            <element signature="e#4989#5098#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/impl/EntrServiceImp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        <state relative-caret-position="195">
+          <caret line="32" column="8" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/core/ResultCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding />
         </state>
       </provider>
