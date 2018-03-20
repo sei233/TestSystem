@@ -151,6 +151,17 @@ public class UserServiceImp implements UserService {
         return userList;
     }
 
+    @Override
+    public List<User> search3User(String userName) throws BusiException{
+        List<User> userList=new ArrayList();
+        User user=userRepository.findUserByUserNameAndUserEntrance(userName,1);
+        if (user==null){
+            throw new BusiException(ResultCode.USER_UNEXIST);
+        }
+        userList.add(user);
+        return userList;
+    }
+
     //获取总记录数
     public int getCount() {
         return userRepository.getCount();

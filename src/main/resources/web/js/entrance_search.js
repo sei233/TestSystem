@@ -33,6 +33,29 @@ $(function () {
             usersList(data);
             pageNum(data);
 
+            $('#ensure').click(function () {
+
+            });
+
+            $('#submit3').click(function () {
+                var paramData = {
+                    userName:$("#userName").val()
+                };
+                table();
+                //js控制#id
+                $.post({
+                    url: 'http://localhost:8080/user/search3',
+                    data: paramData,
+                    dataType: "json",
+                    success: function(data) {
+                        usersList(data);
+                        alert(data.errorCode + "   " + data.errorMessage);
+                    },
+                    error:function (data) {
+                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
+                    }
+                })
+            });
 
             alert(data.errorCode + "   " + data.errorMessage);
         },

@@ -24,6 +24,9 @@ public interface UserRepository extends JpaRepository<User,Long>,JpaSpecificatio
     @Query(value = "SELECT * FROM user WHERE user_name=?1 AND user_state=?2",nativeQuery = true)
     public User findUserByUserNameAndUserState(String userName,int userState);
 
+    @Query(value = "SELECT * FROM user WHERE user_name=?1 AND user_entrance=?2",nativeQuery = true)
+    public User findUserByUserNameAndUserEntrance(String userName,int userEntr);
+
     @Query(value = "SELECT * FROM user limit ?1,?2",nativeQuery = true)
     List<User> selectUser(int index, int size);
 

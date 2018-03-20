@@ -20,6 +20,7 @@ public interface UserService {
     int getCount()throws BusiException;
     List<User> search2User(String userName) throws BusiException;
     List<User> search1User(String userName) throws BusiException;
+    List<User> search3User(String userName) throws BusiException;
     List<User> findUserByState() throws BusiException;
     List<User> findUserByName(String name) throws BusiException;
     List<User> findUserByEntrance() throws BusiException;
