@@ -139,9 +139,19 @@ public class MainController {
         return httpResult;
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.POST)
-    public HttpResult searchUsers(UserVo userVo) throws BusiException {
-        List<User> usersList = userService.searchUser(userVo.getUserName());
+    @RequestMapping(value = "/search2", method = RequestMethod.POST)
+    public HttpResult search2Users(UserVo userVo) throws BusiException {
+        List<User> usersList = userService.search2User(userVo.getUserName());
+        UserListVo httpResult = new UserListVo();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        return httpResult;
+    }
+
+    @RequestMapping(value = "/search1", method = RequestMethod.POST)
+    public HttpResult search1Users(UserVo userVo) throws BusiException {
+        List<User> usersList = userService.search1User(userVo.getUserName());
         UserListVo httpResult = new UserListVo();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
@@ -240,7 +250,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/correct", method = RequestMethod.POST)
-    public HttpResult searchStudent(TestQueryVo testQueryVo) throws BusiException {
+    public HttpResult queryStudent(TestQueryVo testQueryVo) throws BusiException {
         List<User> usersList = userService.findUserByEntrance();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());

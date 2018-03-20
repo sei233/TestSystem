@@ -21,8 +21,8 @@ public interface UserRepository extends JpaRepository<User,Long>,JpaSpecificatio
     public List<User> findByUserState(int userState);
     public List<User> findByUserEntrance(int userEntrance);
     //要想用sql语句直接写复杂查询，按照这个这么写就行了，?1是参数占位符,注意这里就没有按照规则findBy出来
-    @Query(value = "SELECT * FROM USER WHERE user_name=?1 AND user_id=?2",nativeQuery = true)
-    public User findUserByUserNameAndUserId(String userName,Long userId);
+    @Query(value = "SELECT * FROM user WHERE user_name=?1 AND user_state=?2",nativeQuery = true)
+    public User findUserByUserNameAndUserState(String userName,int userState);
 
     @Query(value = "SELECT * FROM user limit ?1,?2",nativeQuery = true)
     List<User> selectUser(int index, int size);

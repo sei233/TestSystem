@@ -130,9 +130,23 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<User> searchUser(String userName) {
+    public List<User> search2User(String userName) throws BusiException{
+        List<User> userList=new ArrayList();
+        User user=userRepository.findUserByUserNameAndUserState(userName,2);
+        if (user==null){
+            throw new BusiException(ResultCode.USER_UNEXIST);
+        }
+        userList.add(user);
+        return userList;
+    }
+
+    @Override
+    public List<User> search1User(String userName) throws BusiException{
         List<User> userList=new ArrayList();
         User user=userRepository.findByUserName(userName);
+        if (user==null){
+            throw new BusiException(ResultCode.USER_UNEXIST);
+        }
         userList.add(user);
         return userList;
     }

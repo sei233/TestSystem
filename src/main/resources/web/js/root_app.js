@@ -48,7 +48,7 @@ $(function () {
                 table();
                 //js控制#id
                 $.post({
-                    url: 'http://localhost:8080/user/search',
+                    url: 'http://localhost:8080/user/search2',
                     data: paramData,
                     dataType: "json",
                     success: function(data) {
