@@ -15,6 +15,7 @@ public interface UserService {
     void loginUser(UserVo user) throws BusiException;
     void deleteUsers(UserNamesVo userNames) throws BusiException;
     void passUsers(UserNamesVo userNamesVo) throws BusiException;
+    void ensureUsers(UserNamesVo userNamesVo) throws BusiException;
     List<User> findAllUser() throws BusiException;
     List<User> findUserByPage(int index,int size) throws BusiException;
     int getCount()throws BusiException;

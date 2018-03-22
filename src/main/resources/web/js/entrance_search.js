@@ -8,9 +8,9 @@ $(function () {
                 var usersList=data.usersList;
                 $.each(usersList,function (index,obj) {
                     var string= "<tr>"
-                        +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test2'>"+"</td>"
+                        +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test3'>"+"</td>"
                         +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>"
-                        +"<td width=\"20%\" align=\"center\" class='userName2'>"+obj.userName+"</td>"
+                        +"<td width=\"20%\" align=\"center\" class='userName3'>"+obj.userName+"</td>"
                         +"<td width=\"20%\" align=\"center\">"+obj.userPhone+"</td>"
                         +"</tr>"
                     $("#table").append(string);
@@ -33,9 +33,32 @@ $(function () {
             usersList(data);
             pageNum(data);
 
+            var name_map=new Array();
             $('#ensure').click(function () {
-
-            });
+                $("input[name='test3']:radio:checked").each(function(){   //遍历所有选中的checkbox
+                    var names=$(this).parent("td").parent("tr").children("td.userName3").html().toString();
+                    name_map.push(names);
+                    console.log(name_map);
+                });
+                var paramData={
+                    userNames:name_map
+                }
+                table();
+                $.post({
+                    url: 'http://localhost:8080/user/ensure',
+                    data: JSON.stringify(paramData),
+                    dataType: "json",
+                    contentType:"application/json",      //重要
+                    success: function(data) {
+                        usersList(data);
+                        pageNum(data);
+                        alert(data.errorCode + "   " + data.errorMessage);
+                    },
+                    error:function (data) {
+                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
+                    }
+                })
+            });     //跳转批改界面？
 
             $('#submit3').click(function () {
                 var paramData = {
@@ -63,4 +86,4 @@ $(function () {
             alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
         }
     });
-})
+});

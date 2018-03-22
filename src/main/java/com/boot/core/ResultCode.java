@@ -11,6 +11,7 @@ public enum ResultCode {
     USER_ROLE_ERROR(1006,"用户角色错误"),
     USER_STATE_ERROR(1007,"等待管理员审核"),
     QUESTION_UNEXIST(1008,"题目未填满"),
+    User_TEST_ERROR(1009,"等待教师审核")
     ;
 
 

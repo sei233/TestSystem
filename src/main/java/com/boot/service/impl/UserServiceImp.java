@@ -97,6 +97,17 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public void ensureUsers(UserNamesVo userNamesVo) {
+        Iterator it = userNamesVo.getUserNames().iterator();      //遍历userNames，然后一个一个删除
+        while(it.hasNext()){
+            String s = (String) it.next();
+            User user=userRepository.findByUserName(s);
+            user.setUserEntrance(2);
+            userRepository.save(user);
+        }
+    }
+
+    @Override
     public List<User> findAllUser() throws BusiException {
         return userRepository.findAll();
     }

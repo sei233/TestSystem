@@ -186,7 +186,20 @@ public class MainController {
         login_name.setErrorCode(ResultCode.SUCCESS.getCode());
         login_name.setErrorMessage(ResultCode.SUCCESS.getMessage());
         login_name.setEntrance(user.getUserEntrance());
+        if (login_name.getEntrance()==1){
+            throw new BusiException(ResultCode.User_TEST_ERROR);
+        }
         return login_name;
+    }
+
+    @RequestMapping(value = "/ensure", method = RequestMethod.POST)
+    public HttpResult ensureUser(@RequestBody UserNamesVo userNamesVo) throws BusiException {
+        userService.ensureUsers(userNamesVo);
+        List<User> usersList = userService.findUserByEntrance();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setUsersList(usersList);
+        return httpResult;
     }
 
     @RequestMapping(value = "/test1", method = RequestMethod.POST)
