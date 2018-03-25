@@ -94,6 +94,7 @@ $(function () {
                     contentType:"application/json",
                     success: function (data) {
                         alert(data.errorCode + "   " + data.errorMessage);
+                        window.location.assign("../student/student_main.html")
                         //跳转下一题
                     },
                     error: function (data) {
