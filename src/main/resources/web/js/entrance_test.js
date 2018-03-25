@@ -96,6 +96,7 @@ $(function () {
                         alert(data.errorCode + "   " + data.errorMessage);
                         window.location.assign("../student/student_main.html")
                         //跳转下一题
+                        //test
                     },
                     error: function (data) {
                         alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
