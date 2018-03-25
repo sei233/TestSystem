@@ -2,7 +2,7 @@
     font-family: 'Open Sans', sans-serif;
     padding: 20px;
     margin: 0;
-    background: url(../images/bg.png);
+    background: url(../images/Desert.jpg);
 }
 
 .demos-buttons {
@@ -225,7 +225,7 @@ html[xmlns] .clearfix {
     font-style: italic;
 }
 
-.contact input::-ms-input-placeholder, .contact textarea::-ms-input-placeholder {
+.contact input:-ms-input-placeholder, .contact textarea:-ms-input-placeholder {
     color: red;
 }
 
@@ -4158,19 +4158,19 @@ html[xmlns] .clearfix {
     padding-right: 45px;
 }
 
-.flip-container {
-    -webkit-perspective: 1000;
-    -moz-perspective: 1000;
-    perspective: 1000;
-}
+/*.flip-container {*/
+    /*-webkit-perspective: 1000;*/
+    /*-moz-perspective: 1000;*/
+    /*perspective: 1000;*/
+/*}*/
 
-.flip-container.flip .flipper {
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-}
+/*.flip-container.flip .flipper {*/
+    /*-webkit-transform: rotateY(180deg);*/
+    /*-moz-transform: rotateY(180deg);*/
+    /*transform: rotateY(180deg);*/
+    /*filter: FlipH;*/
+    /*-ms-filter: "FlipH";*/
+/*}*/
 
 .flip-container, .front, .back {
     width: 100%;
