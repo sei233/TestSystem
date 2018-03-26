@@ -7,7 +7,7 @@ $(function () {
             function usersList(data){
             var usersList=data.usersList;
             $.each(usersList,function (index,obj) {
-                var string= "<tr>"
+                var string= "<tr style=\"color: #B0BED9\">"
                     +"<td width=\"10%\" align=\"center\">"+"<input type=checkbox name='test1'>"+"</td>"
                     +"<td width=\"10%\" align=\"center\">"+obj.userId+"</td>"
                     +"<td width=\"20%\" align=\"center\" class='userName1'>"+obj.userName+"</td>"
@@ -19,7 +19,7 @@ $(function () {
             });
             }
             function table() {
-                $("#table_id_example").html("<tr>" +
+                $("#table_id_example").html("<tr style=\"color: #B0BED9\">" +
                     "        <th width=\"10%\"></th>" +
                     "        <th width=\"10%\">用户ID</th>" +
                     "        <th width=\"20%\">用户名</th>" +
@@ -30,8 +30,8 @@ $(function () {
 
             }
             function pageNum(data){
-                $("#pageNum").html("<label>"+"当前页面:"+"</label>");
-                $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
+                $("#pageNum").html("<label style=\"color: #B0BED9\">"+"当前页面:"+"</label>");
+                $("#pageNum").append("<label style=\"color: #B0BED9\">" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
             }
 
             usersList(data);
@@ -40,7 +40,7 @@ $(function () {
             //         +"<a id='pageUp'>"+"上一页"+"</a>"
             //         +"<a id='pageDown'>"+"下一页"+"</a>"
             // $("#table_id_example").append(page);
-            $("#pageNum").append("<label>"+"["+data.page+"/"+data.totalPage+"]"+"</label>");
+            $("#pageNum").append("<label style=\"color: #B0BED9\">"+"["+data.page+"/"+data.totalPage+"]"+"</label>");
 
             $('#pageUp').click(function(){
                 table();

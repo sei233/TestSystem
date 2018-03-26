@@ -15,10 +15,17 @@
         border: 1px solid black;
     }
     </style>
+    <style>body {
+        font-family: 'Open Sans', sans-serif;
+        padding: 20px;
+        margin: 0;
+        background: url(../../images/back1.png);
+    }
+    </style>
 </head>
 <body>
-<table id="table_id_example" cellpadding="0" cellspacing="0" border="0" width="100%" class="table">
-    <tr>
+<table id="table_id_example" cellpadding="0" cellspacing="0" border="0" width="100%" class="table" style="margin-top: 100px">
+    <tr style="color: #B0BED9">
         <th width="10%"></th>
         <th width="10%">用户ID</th>
         <th width="20%">用户名</th>
@@ -27,17 +34,37 @@
         <th width="20%">权限</th>
     </tr>
 </table>
-<div class="lbl" id="pageNum"><label>当前页面:</label></div>
+<div class="lbl" id="pageNum"><label style="color: #B0BED9">当前页面:</label></div>
 <form method="post" id="search">
 <div class="lbl">
-    <label>搜索用户:</label>
+    <label style="color: #B0BED9">搜索用户:</label>
     <input style="background-color: #EbEbEb" type="text" id="userName" name="userName"
            data-validation="text" data-msg="Invalid editType" value="" >
     <input type="button" id="submit" value="提交">
 </div>
 </form>
-<a id='pageUp'>上一页  </a>
-<a id='pageDown'>下一页  </a>
+<a id='pageUp' style="color: #B0BED9">上一页  </a>
+<a id='pageDown' style="color: #B0BED9">下一页  </a>
 <button id="delete">删除</button>
+<script type="text/javascript">
+    window.onload = function() {
+        var config = {
+            vx : 4,
+            vy : 4,
+            height : 2,
+            width : 2,
+            count : 100,
+            color : "121, 162, 185",
+            stroke : "100, 200, 180",
+            dist : 6000,
+            e_dist : 20000,
+            max_conn : 10
+        }
+        CanvasParticle(config);
+    }
+</script>
+<script type="text/javascript" src="../../js/canvas-particle.js"></script>
+<canvas width="1000" height="800" style="position: absolute; top:0px; left:0px;
+z-index:-1; "></canvas>
 </body>
 </html>
