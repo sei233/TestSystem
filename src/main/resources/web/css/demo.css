@@ -20,10 +20,9 @@
 .container {
     padding: 30px;
     margin: 0 auto;
-    background: #fff;
+    filter:alpha(Opacity=80);
     border: 1px solid #ccc;
     width: 45%;
-    margin: 0 auto;
 }
 
 .lbl {
