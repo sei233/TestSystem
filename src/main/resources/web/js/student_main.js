@@ -21,7 +21,7 @@ $(function () {
                     data: "",
                     dataType: "json",
                     success: function (data) {
-                        if(data.entrance==0) window.location.assign("../entrance/entrance_test.html")
+                        if(data.entrance==0) window.location.assign("../entrance/entrance_test1.html")
                         if(data.entrance==2) window.location.assign("../entrance/entrance_repo.html")
                         alert(data.errorCode + "   " + data.errorMessage);
                     },
