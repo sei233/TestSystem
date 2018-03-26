@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -47,4 +48,11 @@ public class EntrServiceImp implements EntrService {
         entrRepository.save(entrance);
     }
 
+    @Override
+    public List<Entrance> findEntrByStudent(String name) {
+        List<Entrance> entrances=new ArrayList<>();
+        Entrance entrance=entrRepository.findByStudent(name);
+        entrances.add(entrance);
+        return entrances;
+    }
 }

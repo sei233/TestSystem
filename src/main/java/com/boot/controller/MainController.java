@@ -8,6 +8,7 @@
 package com.boot.controller;
 
 import com.boot.bean.base.HttpResult;
+import com.boot.bean.po.Entrance;
 import com.boot.bean.po.Test;
 import com.boot.bean.po.User;
 import com.boot.bean.vo.*;
@@ -190,6 +191,16 @@ public class MainController {
             throw new BusiException(ResultCode.User_TEST_ERROR);
         }
         return login_name;
+    }
+
+    @RequestMapping(value = "/entrance_repo", method = RequestMethod.POST)
+    public HttpResult entranceRepo() throws BusiException {
+        List<Entrance> entrances=entrService.findEntrByStudent(login_name.getName());
+        EntrListVo httpResult = new EntrListVo();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        httpResult.setEntrList(entrances);
+        return httpResult;
     }
 
     @RequestMapping(value = "/ensure", method = RequestMethod.POST)
