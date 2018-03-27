@@ -13,11 +13,8 @@ $(function () {
                         var datas=data.page-1;
                         var string= "<tr>"
                             +"<td width=\"10%\" align=\"center\" id='"+index.toString()+"'>"+obj.question+"</td>"
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='5'>"+"</td>"   //相同name只能取一个
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='4'>"+"</td>"
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='3'>"+"</td>"
-                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='2'>"+"</td>"
                             +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='1'>"+"</td>"
+                            +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='0'>"+"</td>"
                             +"</tr>"
                         $("#questions").append(string);
                 });
@@ -117,47 +114,6 @@ $(function () {
 
             $("#pageNum").append("<label>"+"["+data.page+"/"+data.totalPage+"]"+"</label>");
 
-            $('#pageDown').click(function () {
-                radio();
-                table();
-                if($.cookie('name')!=null){
-                    console.log($.cookie('name'));
-                    console.log($.cookie('id'));
-                }   //cookie将表以文本形式存储？
-                $.post({
-                    url: 'http://localhost:8080/user/pageDown_test1',
-                    data: "",
-                    dataType: "json",
-                    success: function (data) {
-                        testsList(data);
-                        read();
-                        pageNum(data);
-                        alert(data.errorCode + "   " + data.errorMessage);
-                    },
-                    error: function (data) {
-                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
-                    }
-                })
-            });                             //获得自动提交
-
-            $('#pageUp').click(function () {
-                radio();
-                table();
-                $.post({
-                    url: 'http://localhost:8080/user/pageUp_test1',
-                    data: "",
-                    dataType: "json",
-                    success: function (data) {
-                        testsList(data);
-                        read();
-                        pageNum(data);
-                        alert(data.errorCode + "   " + data.errorMessage);
-                    },
-                    error: function (data) {
-                        alert(data.responseJSON.errorCode + "   " + data.responseJSON.errorMessage);
-                    }
-                })
-            });
 
             alert(data.errorCode + "   " + data.errorMessage);
         },

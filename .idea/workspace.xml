@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="021bf75a-822b-477e-a9fb-7a65a2399dd9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/boot/bean/po/Test2.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2ListVo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/boot/dao/Test2Repository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/boot/service/Test2Service.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/boot/service/impl/Test2ServiceImp.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/bean/po/Test.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/bean/po/Test.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test2.html" afterPath="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test2.html" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/web/js/entrance_test2.js" afterPath="$PROJECT_DIR$/src/main/resources/web/js/entrance_test2.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,11 +18,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="entrance_test2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entrance_test2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entrance_test2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/entrance_test2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+            <state relative-caret-position="326">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -36,18 +41,8 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="254" column="23" lean-forward="true" selection-start-line="254" selection-start-column="23" selection-end-line="254" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test2ListVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2ListVo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="243">
+              <caret line="246" column="23" lean-forward="true" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -57,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -133,7 +128,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/boot/Application.java" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/test.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test2.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/EntrListVo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/EntrService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/impl/EntrServiceImp.java" />
@@ -155,15 +149,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_search.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/entrance_search.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/po/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/po/Test2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/TestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/Test2Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/dao/Test2Repository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2ListVo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/impl/Test2ServiceImp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/entrance_test2.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test2.html" />
       </list>
     </option>
   </component>
@@ -921,14 +916,7 @@
       <workItem from="1522029694391" duration="4852000" />
       <workItem from="1522042814474" duration="7190000" />
       <workItem from="1522108842483" duration="3999000" />
-      <workItem from="1522115713930" duration="1869000" />
-    </task>
-    <task id="LOCAL-00010" summary="提交内容：完成删除&#10;提交时间：2018年3月6日15:06:59&#10;提交人：石乾">
-      <created>1520320095241</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1520320095243</updated>
+      <workItem from="1522115713930" duration="2503000" />
     </task>
     <task id="LOCAL-00011" summary="提交内容：删除的小补充&#10;提交时间：2018年3月6日15:20:59&#10;提交人：石乾">
       <created>1520320978335</created>
@@ -1266,11 +1254,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522109346326</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="      提交内容：test2：上一页下一页还没写&#10;      提交时间：2018年3月27日8:07:59&#10;      提交人：石乾">
+      <created>1522117608529</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1522117608530</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198356000" />
+    <option name="totallyTimeSpent" value="198990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1352,7 +1347,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="提交内容：缓存&#10;提交时间：2018年3月16日9:20:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：缓存，删除重复&#10;提交时间：2018年3月17日11:18:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：缓存，替换优化&#10;提交时间：2018年3月18日10:11:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：教师主界面&#10;提交时间：2018年3月18日10:11:59&#10;提交人：石乾" />
@@ -1377,20 +1371,21 @@
     <MESSAGE value="      提交内容：container透明化&#10;      提交时间：2018年3月26日14:34:59&#10;      提交人：石乾" />
     <MESSAGE value="      提交内容：rootUI更新&#10;      提交时间：2018年3月26日15:06:59&#10;      提交人：石乾" />
     <MESSAGE value="      提交内容：是时候写test2了&#10;      提交时间：2018年3月27日8:07:59&#10;      提交人：石乾" />
-    <option name="LAST_COMMIT_MESSAGE" value="      提交内容：是时候写test2了&#10;      提交时间：2018年3月27日8:07:59&#10;      提交人：石乾" />
+    <MESSAGE value="      提交内容：test2：上一页下一页还没写&#10;      提交时间：2018年3月27日8:07:59&#10;      提交人：石乾" />
+    <option name="LAST_COMMIT_MESSAGE" value="      提交内容：test2：上一页下一页还没写&#10;      提交时间：2018年3月27日8:07:59&#10;      提交人：石乾" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java</url>
-          <line>251</line>
+          <line>243</line>
           <properties />
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java</url>
-          <line>248</line>
+          <line>240</line>
           <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
@@ -1658,14 +1653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/po/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1708,41 +1695,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/dao/Test2Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <marker date="1522116492076" expanded="true" signature="831:888" ph="SELECT * FRO... testjudge" />
-            <marker date="1522116492076" expanded="true" signature="1007:1042" ph="SELECT * FRO... testjudge" />
-            <marker date="1522116492076" expanded="true" signature="1134:1171" ph="SELECT COUNT... testjudge" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2ListVo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/impl/Test2ServiceImp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#870#871#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1782,18 +1739,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/dao/Test2Repository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="254" column="23" lean-forward="true" selection-start-line="254" selection-start-column="23" selection-end-line="254" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="506">
+          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding>
+            <marker date="1522116492076" expanded="true" signature="831:888" ph="SELECT * FRO... testjudge" />
+            <marker date="1522116492076" expanded="true" signature="1007:1042" ph="SELECT * FRO... testjudge" />
+            <marker date="1522116492076" expanded="true" signature="1134:1171" ph="SELECT COUNT... testjudge" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/service/impl/Test2ServiceImp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#870#871#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/entrance_test2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        <state relative-caret-position="326">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="246" column="23" lean-forward="true" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/boot/bean/vo/Test2QueryVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/entrance/entrance_test2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
         </state>
       </provider>
