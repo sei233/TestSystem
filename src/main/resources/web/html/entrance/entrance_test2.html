@@ -15,6 +15,13 @@
         border: 1px solid black;
     }
     </style>
+    <style>body {
+        font-family: 'Open Sans', sans-serif;
+        padding: 20px;
+        margin: 0;
+        background: url(../../images/back2.png);
+    }
+    </style>
 </head>
 <body>
 <section id="getintouch">
@@ -22,16 +29,36 @@
         <h1><span>判断题，问题如下︰</span></h1>
     </div>
     <div class="container">
-        <table id="questions">
+        <table id="questions" style="color: #B0BED9">
             <th width="70%"></th>
             <th width="15%">是</th>
             <th width="15%">否</th>
         </table>
     </div>
     <div class="container" style="border-bottom: 0;">
-        <div class="lbl" id="pageNum"><label>当前页面:</label></div>
+        <div class="lbl" id="pageNum"><label style="color: #B0BED9">当前页面:</label></div>
         <button id="submit">提交</button>
     </div>
 </section>
+<script type="text/javascript">
+    window.onload = function() {
+        var config = {
+            vx : 4,
+            vy : 4,
+            height : 2,
+            width : 2,
+            count : 100,
+            color : "121, 162, 185",
+            stroke : "100, 200, 180",
+            dist : 6000,
+            e_dist : 20000,
+            max_conn : 10
+        }
+        CanvasParticle(config);
+    }
+</script>
+<script type="text/javascript" src="../../js/canvas-particle.js"></script>
+<canvas width="1000" height="800" style="position: absolute; top:0px; left:0px;
+z-index:-1; "></canvas>
 </body>
 </html>

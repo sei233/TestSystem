@@ -12,7 +12,7 @@ $(function () {
                 $.each(testsList,function (index,obj) {
                         var datas=data.page-1;
                         var string= "<tr>"
-                            +"<td width=\"10%\" align=\"center\" id='"+index.toString()+"'>"+obj.question+"</td>"
+                            +"<td width=\"50%\" align=\"center\" id='"+index.toString()+"'>"+obj.question+"</td>"
                             +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='5'>"+"</td>"   //相同name只能取一个
                             +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='4'>"+"</td>"
                             +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='3'>"+"</td>"
@@ -28,12 +28,12 @@ $(function () {
             }
             function table() {
                 $("#questions").html("<tr>" +
-                    "        <th width=\"10%\"></th>" +
+                    "        <th width=\"50%\"></th>" +
                     "        <th width=\"10%\">非常同意</th>" +
-                    "        <th width=\"20%\">比较同意</th>" +
-                    "        <th width=\"20%\">差不多</th>" +
-                    "        <th width=\"20%\">一点同意</th>" +
-                    "        <th width=\"20%\">不同意</th>" +
+                    "        <th width=\"10%\">比较同意</th>" +
+                    "        <th width=\"10%\">差不多</th>" +
+                    "        <th width=\"10%\">一点同意</th>" +
+                    "        <th width=\"10%\">不同意</th>" +
                     "    </tr>");
             }
             function getNum(arr, val) {
