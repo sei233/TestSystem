@@ -8,12 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "test")
+@Table(name = "testjudge")
 @Data
-public class Test {
+public class Test2 {
     @Id
     @Column(name = "question")
     private String question;
-//性格测试
-
+    //专业能力测试之判断
 }

@@ -10,12 +10,13 @@ package com.boot.controller;
 import com.boot.bean.base.HttpResult;
 import com.boot.bean.po.Entrance;
 import com.boot.bean.po.Test;
+import com.boot.bean.po.Test2;
 import com.boot.bean.po.User;
 import com.boot.bean.vo.*;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
-import com.boot.dao.EntrRepository;
 import com.boot.service.EntrService;
+import com.boot.service.Test2Service;
 import com.boot.service.TestService;
 import com.boot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,9 @@ public class MainController {
     TestListVo Result=new TestListVo();            //testList+page+totalpage
     @Autowired
     EntrService entrService;
+    @Autowired
+    Test2Service test2Service;                        //要有接口+Impl+Repository
+    Test2ListVo Result2=new Test2ListVo();            //testList+page+totalpage
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
@@ -230,6 +234,25 @@ public class MainController {
         Result.setPage(1);
         Result.setTotalPage(total);  //整除
         return Result;
+    }
+
+    @RequestMapping(value = "/test2", method = RequestMethod.POST)
+    public HttpResult test2(Test2QueryVo test2QueryVo) throws BusiException {
+        int size = test2QueryVo.getSize();
+        int count =test2Service.getCount();
+        int total;
+        if (count % size == 0) {
+            total = count / size;
+        } else {
+            total = count / size + 1;
+        }
+        List<Test2> testsList = test2Service.findTestByPage(test2QueryVo.getIndex(), test2QueryVo.getSize());
+        Result2.setErrorCode(ResultCode.SUCCESS.getCode());
+        Result2.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        Result2.setTest2List(testsList);
+        Result2.setPage(1);
+        Result2.setTotalPage(total);  //整除
+        return Result2;
     }
 
     @RequestMapping(value = "/stu_ans", method = RequestMethod.POST)

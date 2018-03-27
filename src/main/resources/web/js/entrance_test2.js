@@ -1,6 +1,6 @@
 $(function () {
     $.post({
-        url: 'http://localhost:8080/user/test1',
+        url: 'http://localhost:8080/user/test2',
         data: "",
         dataType: "json",
         success: function(data) {
@@ -8,7 +8,7 @@ $(function () {
             var id_map = new Array();
 
             function testsList(data){
-                var testsList=data.testList;
+                var testsList=data.test2List;
                 $.each(testsList,function (index,obj) {
                         var datas=data.page-1;
                         var string= "<tr>"
