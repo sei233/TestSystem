@@ -10,9 +10,21 @@
     <script src="../../js/jquery-ui.js" type="text/javascript"></script>
     <script src="../../js/teacher_main.js" type="text/javascript"></script>
     <!--End Framework-->
+    <style>table, th, td
+    {
+        border: 1px solid black;
+    }
+    </style>
+    <style>body {
+        font-family: 'Open Sans', sans-serif;
+        padding: 20px;
+        margin: 0;
+        background: url(../../images/back1.png);
+    }
+    </style>
 </head>
 <body>
-<section id="getintouch">
+<section id="getintouch" style="margin-top: 100px">
     <div class="container" style="border-bottom: 0;">
         <h1><span>教师主界面-demo</span></h1>
     </div>
@@ -20,22 +32,42 @@
         <div class="row clearfix" >
             <img  style="width: 150px;float:left" src="../../images/user.jpg"/>
            <!--div的display属性默认为block（换行），inline即不换行-->
-                <span style="font-size:20px;margin-left:100px" id="name">姓名：</span><br>
-                <span style="font-size:20px;margin-left:100px" id="phone">电话：</span><br>
-                <span style="font-size:20px;margin-left:100px" id="role">职业：</span>
+                <span style="font-size:20px;margin-left:100px;color: #B0BED9" id="name">姓名：</span><br>
+                <span style="font-size:20px;margin-left:100px;color: #B0BED9" id="phone">电话：</span><br>
+                <span style="font-size:20px;margin-left:100px;color: #B0BED9" id="role">职业：</span>
         </div>
         </div>
     <div class="container">
         <div class="row clearfix">
-            <a id="teacher_entrance">入学测评</a>
+            <a id="teacher_entrance" style="color: #B0BED9">入学测评</a>
         </div>
         <div class="row clearfix">
-            <a id="teacher_study">学中测评</a>
+            <a id="teacher_study" style="color: #B0BED9">学中测评</a>
         </div>
         <div class="row clearfix">
-            <a id="teacher_graduation">结业测评</a>
+            <a id="teacher_graduation" style="color: #B0BED9">结业测评</a>
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    window.onload = function() {
+        var config = {
+            vx : 4,
+            vy : 4,
+            height : 2,
+            width : 2,
+            count : 100,
+            color : "121, 162, 185",
+            stroke : "100, 200, 180",
+            dist : 6000,
+            e_dist : 20000,
+            max_conn : 10
+        }
+        CanvasParticle(config);
+    }
+</script>
+<script type="text/javascript" src="../../js/canvas-particle.js"></script>
+<canvas width="1000" height="800" style="position: absolute; top:0px; left:0px;
+z-index:-1; "></canvas>
 </body>
 </html>

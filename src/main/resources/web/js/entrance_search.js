@@ -26,8 +26,8 @@ $(function () {
 
             }
             function pageNum(data){
-                $("#pageNum").html("<label>"+"当前页面:"+"</label>");
-                $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
+                $("#pageNum").html("<label style=\"color: #B0BED9\">"+"当前页面:"+"</label>");
+                $("#pageNum").append("<label style=\"color: #B0BED9\">" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
             }
 
             usersList(data);

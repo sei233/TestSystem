@@ -23,8 +23,8 @@ $(function () {
                 });
             }
             function pageNum(data){
-                $("#pageNum").html("<label>"+"当前页面:"+"</label>");
-                $("#pageNum").append("<label>" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
+                $("#pageNum").html("<label style=\"color: #B0BED9\">"+"当前页面:"+"</label>");
+                $("#pageNum").append("<label style=\"color: #B0BED9\">" + "[" + data.page + "/" + data.totalPage + "]" + "</label>");
             }
             function table() {
                 $("#questions").html("<tr>" +
@@ -115,7 +115,7 @@ $(function () {
                 // var test5=list_map[3]+list_map[8]+list_map[11]+list_map[18]+list_map[22]+list_map[26];  //4、9、12、19、23、27
                 // console.log("变色龙:"+test5);
 
-            $("#pageNum").append("<label>"+"["+data.page+"/"+data.totalPage+"]"+"</label>");
+            $("#pageNum").append("<label style=\"color: #B0BED9\">"+"["+data.page+"/"+data.totalPage+"]"+"</label>");
 
             $('#pageDown').click(function () {
                 radio();
