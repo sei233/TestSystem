@@ -14,5 +14,7 @@ public class Test2 {
     @Id
     @Column(name = "question")
     private String question;
+    @Column(name = "answer")
+    private int answer;
     //专业能力测试之判断
 }

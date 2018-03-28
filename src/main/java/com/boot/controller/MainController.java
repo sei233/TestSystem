@@ -15,16 +15,15 @@ import com.boot.bean.po.User;
 import com.boot.bean.vo.*;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
-import com.boot.service.EntrService;
-import com.boot.service.Test2Service;
-import com.boot.service.TestService;
-import com.boot.service.UserService;
+import com.boot.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 //配置RestController注解，表示这个是Rest风格的controller，用来处理json的数据
@@ -41,8 +40,11 @@ public class MainController {
     @Autowired
     EntrService entrService;
     @Autowired
+    Entr2Service entr2Service;
+    @Autowired
     Test2Service test2Service;                        //要有接口+Impl+Repository
     Test2ListVo Result2=new Test2ListVo();            //testList+page+totalpage
+
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
@@ -247,11 +249,27 @@ public class MainController {
         return Result2;
     }
 
-    @RequestMapping(value = "/stu_ans", method = RequestMethod.POST)
-    public HttpResult storeTests(@RequestBody TestStuVo testStuVo) throws BusiException {      //存储成功
+    @RequestMapping(value = "/stu_ans1", method = RequestMethod.POST)
+    public HttpResult storeTests1(@RequestBody TestStuVo testStuVo) throws BusiException {      //存储成功
         String name=login_name.getName();
         entrService.calculate(testStuVo,name);
-        userService.setUserEntrance(name,1);
+      //  userService.setUserEntrance(name,1);
+        HttpResult httpResult=new HttpResult();
+        httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
+        httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        return httpResult;
+    }
+
+    @RequestMapping(value = "/stu_ans2", method = RequestMethod.POST)
+    public HttpResult storeTests2(@RequestBody TestStuVo testStuVo,Test2QueryVo test2QueryVo) throws BusiException {
+        String name=login_name.getName();
+        List<Test2> QA=Result2.getTest2List();
+        List<Integer> Answer=new ArrayList();
+        for(int i=0;i<QA.size();i++){
+            Test2 test=QA.get(i);
+            Answer.add(test.getAnswer());
+        }
+        entr2Service.calculate(testStuVo,name,Answer);
         HttpResult httpResult=new HttpResult();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());

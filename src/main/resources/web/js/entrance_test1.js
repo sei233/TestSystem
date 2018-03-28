@@ -88,7 +88,7 @@ $(function () {
                     testNum:name_map
                 };
                 $.post({
-                    url: 'http://localhost:8080/user/stu_ans',
+                    url: 'http://localhost:8080/user/stu_ans1',
                     data: JSON.stringify(paramData),
                     dataType: "json",
                     contentType:"application/json",
