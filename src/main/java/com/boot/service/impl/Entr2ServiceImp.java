@@ -47,7 +47,7 @@ public class Entr2ServiceImp implements Entr2Service {
     }
 
     @Override
-    public List<Entrance2> findEntrByStudent(String name) {
+    public List<Entrance2> findGradesByStudent(String name) {
         List<Entrance2> entrances=new ArrayList<>();
         Entrance2 entrance=entr2Repository.findByStudent(name);
         entrances.add(entrance);

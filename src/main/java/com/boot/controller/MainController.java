@@ -8,10 +8,7 @@
 package com.boot.controller;
 
 import com.boot.bean.base.HttpResult;
-import com.boot.bean.po.Entrance;
-import com.boot.bean.po.Test;
-import com.boot.bean.po.Test2;
-import com.boot.bean.po.User;
+import com.boot.bean.po.*;
 import com.boot.bean.vo.*;
 import com.boot.core.BusiException;
 import com.boot.core.ResultCode;
@@ -202,10 +199,13 @@ public class MainController {
     @RequestMapping(value = "/entrance_repo", method = RequestMethod.POST)
     public HttpResult entranceRepo() throws BusiException {
         List<Entrance> entrances=entrService.findEntrByStudent(login_name.getName());
+        List<Entrance2> judgeGrades= entr2Service.findGradesByStudent(login_name.getName());
+        Entrance2 grades=judgeGrades.get(0);
         EntrListVo httpResult = new EntrListVo();
         httpResult.setErrorCode(ResultCode.SUCCESS.getCode());
         httpResult.setErrorMessage(ResultCode.SUCCESS.getMessage());
         httpResult.setEntrList(entrances);
+        httpResult.setJudgeGrades(grades.getGrades());
         return httpResult;
     }
 

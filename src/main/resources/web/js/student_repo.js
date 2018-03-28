@@ -15,6 +15,7 @@ $(function () {
                     $("#Patience").append("<label>" + obj.patience + "</label>");
                     $("#Conformity").append("<label>" + obj.conformity + "</label>");
                     $("#Sigma").append("<label>" + obj.sigma + "</label>");
+                    $("#Judge").append("<label>" + data.judgeGrades + "</label>");
                 });
             }
             usersList(data);

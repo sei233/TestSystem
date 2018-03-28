@@ -10,5 +10,5 @@ import java.util.List;
 @Data
 public class EntrListVo extends HttpResult {
     List<Entrance> entrList;
-
+    int judgeGrades;
 }
