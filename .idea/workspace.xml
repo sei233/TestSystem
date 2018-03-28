@@ -4,6 +4,7 @@
     <list default="true" id="021bf75a-822b-477e-a9fb-7a65a2399dd9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/web/html/login.html" afterPath="$PROJECT_DIR$/src/main/resources/web/html/login.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/web/html/register.html" afterPath="$PROJECT_DIR$/src/main/resources/web/html/register.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,18 +20,22 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="339">
-              <caret line="51" column="72" lean-forward="false" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
-              <folding />
+              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#form#0;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/web/css/demo.css">
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="186" column="1" lean-forward="false" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="299">
+              <caret line="37" column="98" lean-forward="false" selection-start-line="37" selection-start-column="98" selection-end-line="37" selection-end-column="98" />
+              <folding>
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#form#0;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,6 +51,13 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>text</find>
+      <find>ctrl</find>
+      <find>lbl</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -84,7 +96,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/boot/service/impl/EntrServiceImp.java" />
         <option value="$PROJECT_DIR$/src/main/resources/web/js/student_repo.js" />
         <option value="$PROJECT_DIR$/src/main/resources/web/css/demo.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/web/html/register.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/root/root_main.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/root/root_database.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/boot/bean/vo/UserQueryVo.java" />
@@ -109,6 +120,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/web/js/entrance_test1.js" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/student/student_main.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/teacher/teacher_main.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/web/html/register.html" />
         <option value="$PROJECT_DIR$/src/main/resources/web/html/login.html" />
       </list>
     </option>
@@ -144,8 +156,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="75" />
-    <option name="y" value="88" />
+    <option name="x" value="31" />
+    <option name="y" value="158" />
     <option name="width" value="1791" />
     <option name="height" value="998" />
   </component>
@@ -272,6 +284,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -778,14 +791,7 @@
       <workItem from="1522122126782" duration="522000" />
       <workItem from="1522136501402" duration="1191000" />
       <workItem from="1522205314370" duration="14000" />
-      <workItem from="1522217027103" duration="1204000" />
-    </task>
-    <task id="LOCAL-00013" summary="提交内容：搜索&#10;提交时间：2018年3月8日14:08:59&#10;提交人：石乾">
-      <created>1520493141320</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1520493141320</updated>
+      <workItem from="1522217027103" duration="3268000" />
     </task>
     <task id="LOCAL-00014" summary="提交内容：添加了状态&#10;提交时间：2018年3月8日15:48:59&#10;提交人：石乾">
       <created>1520495404187</created>
@@ -1123,11 +1129,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522122578937</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="      提交内容：增加了一个跳转注册的按钮&#10;      提交时间：2018年3月28日14:23:59&#10;      提交人：石乾">
+      <created>1522218279900</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1522218279901</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202772000" />
+    <option name="totallyTimeSpent" value="204836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1209,7 +1222,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="提交内容：教师主界面&#10;提交时间：2018年3月18日10:11:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：教师主界面&#10;提交时间：2018年3月18日10:31:59&#10;提交人：石乾" />
     <MESSAGE value="提交内容：教师主界面&#10;      提交时间：2018年3月18日10:31:59&#10;      提交人：石乾" />
     <MESSAGE value="提交内容：bug测试&#10;      提交时间：2018年3月19日10:51:59&#10;      提交人：石乾" />
@@ -1234,7 +1246,8 @@
     <MESSAGE value="      提交内容：test2：上一页下一页还没写&#10;      提交时间：2018年3月27日8:07:59&#10;      提交人：石乾" />
     <MESSAGE value="      提交内容：test2判断题&#10;      提交时间：2018年3月27日8:07:59&#10;      提交人：石乾" />
     <MESSAGE value="      提交内容：改了张图片&#10;      提交时间：2018年3月27日11:48:59&#10;      提交人：石乾" />
-    <option name="LAST_COMMIT_MESSAGE" value="      提交内容：改了张图片&#10;      提交时间：2018年3月27日11:48:59&#10;      提交人：石乾" />
+    <MESSAGE value="      提交内容：增加了一个跳转注册的按钮&#10;      提交时间：2018年3月28日14:23:59&#10;      提交人：石乾" />
+    <option name="LAST_COMMIT_MESSAGE" value="      提交内容：增加了一个跳转注册的按钮&#10;      提交时间：2018年3月28日14:23:59&#10;      提交人：石乾" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1275,27 +1288,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/study/study_test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/study/study_repo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/graduation/gradu_repo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/graduation/gradu_test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1370,13 +1362,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1635,19 +1620,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="90" column="22" lean-forward="false" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/web/js/jquery-ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="8865" column="27" lean-forward="false" selection-start-line="8865" selection-start-column="23" selection-end-line="8865" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="124" column="18" lean-forward="false" selection-start-line="124" selection-start-column="18" selection-end-line="124" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/web/css/demo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="186" column="1" lean-forward="false" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
+        <state relative-caret-position="160">
+          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="37" column="98" lean-forward="false" selection-start-line="37" selection-start-column="98" selection-end-line="37" selection-end-column="98" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#2;n#form#0;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/web/html/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
-          <caret line="51" column="72" lean-forward="false" selection-start-line="51" selection-start-column="72" selection-end-line="51" selection-end-column="72" />
-          <folding />
+          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#form#0;n#div#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
