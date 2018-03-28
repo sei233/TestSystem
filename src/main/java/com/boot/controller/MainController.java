@@ -41,7 +41,9 @@ public class MainController {
     @Autowired
     Test2Service test2Service;                        //要有接口+Impl+Repository
     Test2ListVo Result2=new Test2ListVo();            //testList+page+totalpage
-
+    @Autowired
+    Test3Service test3Service;                        //要有接口+Impl+Repository
+    Test3ListVo Result3=new Test3ListVo();            //testList+page+totalpage
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public HttpResult registUser(UserVo userVo) throws BusiException {
@@ -247,6 +249,17 @@ public class MainController {
         Result2.setPage(1);
         Result2.setTotalPage(1);  //整除
         return Result2;
+    }
+
+    @RequestMapping(value = "/test3", method = RequestMethod.POST)
+    public HttpResult test3(Test3QueryVo test3QueryVo) throws BusiException {
+        List<Test3> testsList = test3Service.findTestByPage(test3QueryVo.getIndex(), test3QueryVo.getSize());
+        Result3.setErrorCode(ResultCode.SUCCESS.getCode());
+        Result3.setErrorMessage(ResultCode.SUCCESS.getMessage());
+        Result3.setTest3List(testsList);
+        Result3.setPage(1);
+        Result3.setTotalPage(1);  //整除
+        return Result3;
     }
 
     @RequestMapping(value = "/stu_ans1", method = RequestMethod.POST)
