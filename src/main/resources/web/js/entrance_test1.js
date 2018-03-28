@@ -12,7 +12,7 @@ $(function () {
                 $.each(testsList,function (index,obj) {
                         var datas=data.page-1;
                         var string= "<tr>"
-                            +"<td width=\"50%\" align=\"center\" id='"+index.toString()+"'>"+obj.question+"</td>"
+                            +"<td width=\"50%\" align=\"left\" id='"+index.toString()+"'>"+obj.question+"</td>"
                             +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='5'>"+"</td>"   //相同name只能取一个
                             +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='4'>"+"</td>"
                             +"<td width=\"10%\" align=\"center\">"+"<input type=radio name='test"+datas+index.toString()+"' id='3'>"+"</td>"
